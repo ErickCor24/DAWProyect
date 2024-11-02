@@ -37,6 +37,10 @@ Para colaborar eficazmente en este proyecto, sigue las siguientes pautas al trab
    - Trabaja en tu rama y realiza los cambios necesarios en el código.
 
 4. **Realiza commits:**
+   - Traer los ultimos cambios de la rama principal
+      ```bash
+     git pull origin main
+     ```
    - Al finalizar tu trabajo, asegúrate de hacer un commit de tus cambios. Usa mensajes claros y descriptivos para tus commits:
      ```bash
      git add .
