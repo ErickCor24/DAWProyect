@@ -32,7 +32,7 @@ header a {
   color: #464853;
 }
 
-.logo-div{
+.logo-div {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -76,27 +76,39 @@ footer {
   margin: 0;
   margin-top: auto;
   border-top: 2px #ececec solid;
-  height: 100px;
+  height: 80px;
   background-color: #f7f7f8;
   width: 100%;
 }
 
-footer h3,p,img,h4 {
+footer h3,
+p,
+img,
+h4 {
   display: inline-block;
-  margin: 15px 15px;
+  margin: 15px 60px;
 }
 
+/*pseudo*/
+.register-button:hover {
+  transition: 50ms ease-in;
+  background-color: #005ce6;
+}
 
 /*Media Querys*/
 
 @media screen and (max-width: 1020px) {
-    header{
-        height: auto;
-        flex-direction: column;
-        padding-bottom: 10px;
-    }
+  header {
+    height: auto;
+    flex-direction: column;
+    padding-bottom: 10px;
+  }
 
-    .nav-links {
-      padding-bottom: 15px;
-    }
+  .nav-links {
+    padding-bottom: 15px;
+  }
+
+  footer {
+    height: auto;
+  }
 }
