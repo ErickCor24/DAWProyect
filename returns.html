@@ -6,77 +6,76 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/style.css">
     <title>ResolveIT</title>
-</head>
 
-<style>
-    main {
-        box-sizing: border-box;
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        place-items: center;
-        row-gap: 40px;
-    }
-
-    main li,
-    p {
-        margin-bottom: 20px;
-    }
-
-    #img-customer {
-        width: 500px;
-        border-radius: 10px;
-    }
-
-    .button-contact {
-        width: 200px;
-        height: 60px;
-        color: #0066ff;
-        border: #0066ff 1px solid;
-        background-color: transparent;
-        border-radius: 5px;
-    }
-
-    .button-continue {
-        background-color: #0066ff;
-        border: none;
-        color: #fefefe;
-        border-radius: 5px;
-        width: 134px;
-        height: 40px;
-    }
-
-    .rules-container {
-        width: 800px;
-    }
-
-    .button-continue:hover {
-        transition: 50ms ease-in;
-        background-color: #005CE6;
-    }
-
-    .button-contact:hover {
-        transition: 100ms ease-in;
-        border: #005CE6 2px solid;
-    }
-
-    @media screen and (max-width: 1020px) {
+    <style>
         main {
             box-sizing: border-box;
             display: grid;
-            grid-template-columns: repeat(1, 1fr);
+            grid-template-columns: repeat(2, 1fr);
             place-items: center;
             row-gap: 40px;
         }
 
+        main li,
+        p {
+            margin-bottom: 20px;
+        }
+
         #img-customer {
-            width: 350px;
+            width: 500px;
+            border-radius: 10px;
+        }
+
+        .button-contact {
+            width: 200px;
+            height: 60px;
+            color: #0066ff;
+            border: #0066ff 1px solid;
+            background-color: transparent;
+            border-radius: 5px;
+        }
+
+        .button-continue {
+            background-color: #0066ff;
+            border: none;
+            color: #fefefe;
+            border-radius: 5px;
+            width: 134px;
+            height: 40px;
         }
 
         .rules-container {
-            width: auto;
+            width: 800px;
         }
-    }
-</style>
+
+        .button-continue:hover {
+            transition: 50ms ease-in;
+            background-color: #005CE6;
+        }
+
+        .button-contact:hover {
+            transition: 100ms ease-in;
+            border: #005CE6 2px solid;
+        }
+
+        @media screen and (max-width: 1020px) {
+            main {
+                box-sizing: border-box;
+                display: grid;
+                grid-template-columns: repeat(1, 1fr);
+                place-items: center;
+                row-gap: 40px;
+            }
+
+            #img-customer {
+                width: 350px;
+            }
+
+            .rules-container {
+                width: auto;
+            }
+        }
+    </style>
 </head>
 
 <body>
