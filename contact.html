@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Camillie Ayovi Villafuerte">
+    <link rel="stylesheet" href="styles/style.css">
+    <title>ResolveIT</title>
+    <style>
+        main {
+            width: 95%;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 30% 30% 30%;
+            grid-template-rows: 200px 1fr;
+            justify-content: center;
+            justify-items: center;
+            row-gap: 10px;
+        }
+
+        .contact-asesor {
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            grid-row: 1/2;
+            grid-column: 1/-1;
+        }
+
+        .header-info {
+            width: 45%;
+            display: flex;
+            flex-direction: column;
+            margin: auto;
+        }
+
+        .header-info h4 {
+            margin-left: 20%;
+            width: fit-content;
+            font-size: 1.1rem;
+        }
+
+        .contact-button {
+            background-color: #fefefe;
+            border: 1.5px solid #464853;
+            color: #464853;
+            border-radius: 5px;
+            padding: 10px;
+            width: fit-content;
+            font-size: 0.8rem;
+            margin-left: 20%;
+        }
+
+        .contact-button:hover {
+            background-color: #464853;
+            color: #fefefe;
+        }
+
+        #header-img {
+            width: 50%;
+            height: 90%;
+            display: flex;
+        }
+
+        .contact-options {
+            box-sizing: border-box;
+            background-color: #f7f7f8;
+            display: flex;
+            flex-direction: column;
+            border-radius: 5px;
+            margin: 20px;
+            padding: 15px;
+            height: 90%;
+            max-width: 300px;
+        }
+
+        .contact-options a{
+            color: #005CE6;
+        }
+
+        .contact-options a:hover{
+            color: #0066FF;
+        }
+
+        .type-contact{
+            margin-left: 0px;
+            font-weight: bold;
+        }
+
+        .icon {
+            width: 45px;
+            height: 45px;
+            margin-bottom: 20px;
+        }
+
+        
+        @media screen and (max-width: 700px) {
+            main {
+                width: 95%;
+                grid-template-columns: 90%;
+                grid-template-rows: auto 1fr 1fr 1fr;
+                min-width: 300px;
+            }
+
+            .header-info {
+                width: 90%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                padding: 10px;
+            }
+
+            .contact-asesor {
+                flex-direction: column;
+            }
+            #header-img{
+                overflow: visible;
+                height: 150px;
+                width: 100%;
+            }
+
+            .contact-options {
+                word-wrap: normal;
+                width: 90%;
+                max-width: none;
+                margin: 10px auto;
+            }
+
+            .header-info h4,
+            .header-info button {
+                margin-left: 0%;
+            }
+        }
+
+        @media screen and (max-width: 160px) {
+            .icon {
+                width: 20px;
+                height: fit-content;
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo-div">
+            <img class="logo-img" src="src/logo.png" alt="Logo empresa" width="50" height="50">
+            <h1 id="logo-name">ResolveIT</h1>
+        </div>
+        <nav class="nav-links">
+            <a href="">Devoluciones</a>
+            <a href="">Historial</a>
+            <a href="">FAQ</a>
+            <a href="">Contactenos</a>
+        </nav>
+        <div id="header-right">
+            <button class="login-button nav-button">Login</button>
+            <button class="register-button nav-button">Register</button>
+        </div>
+    </header>
+
+    <main>
+        <div class="contact-asesor">
+            <div class="header-info">
+                <h4>Contáctanos</h4>
+                <button class="contact-button">Contacta directo con un asesor</button>
+            </div>
+            <div id="header-img">
+                <img id="img-contact" src="https://dbgallery.com/assets/img/Vector-Smart-Object3.png" alt="contact"
+                    style="height: 95%; width: auto; margin: auto;">
+            </div>
+        </div>
+        <div class="contact-options">
+            <img src="https://cdn-icons-png.flaticon.com/128/2450/2450739.png" alt="comunidad" class="icon"
+                style="margin-left: 0px;">
+            <p class="type-contact">Comunidad</p>
+            <p style="margin-left: 0px;">Envía un mensaje en nuestra comunidad, intercambia problemas y posibles
+                soluciones</p>
+            <a href="">Ver comunidad</a>
+        </div>
+        <div class="contact-options">
+            <img src="https://cdn-icons-png.flaticon.com/128/126/126509.png" alt="llamada" class="icon"
+                style="margin-left: 0px;">
+            <p class="type-contact">Llamadas</p>
+            <p style="margin-left: 0px;">Llama a nuestra linea +1800 985 765</p>
+            <a href="">Ver horarios de atención</a>
+        </div>
+        <div class="contact-options">
+            <img src="https://cdn-icons-png.flaticon.com/128/4597/4597536.png" alt="correo" class="icon"
+                style="margin-left: 0px;">
+            <p class="type-contact">Correo</p>
+            <p style="margin-left: 0px;">Envíanos un correo y te responderemos a la mayor brevedad posible.</p>
+            <a href="">Ver correos</a>
+        </div>
+    </main>
+
+    <footer>
+        <h3>Derechos reservados &#169</h3>
+        <p>SOFT S MAT 6-1</p>
+        <h4>Ciencias Matematicas y Fisicas</h4>
+        <p>Grupo 9</p>
+    </footer>
+</body>
+
+</html>
