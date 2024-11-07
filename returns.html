@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/style.css">
+    <title>ResolveIT</title>
+</head>
+
+<style>
+    main {
+        box-sizing: border-box;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        place-items: center;
+        row-gap: 40px;
+    }
+
+    main li,
+    p {
+        margin-bottom: 20px;
+    }
+
+    #img-customer {
+        width: 500px;
+        border-radius: 10px;
+    }
+
+    .button-contact {
+        width: 200px;
+        height: 60px;
+        color: #0066ff;
+        border: #0066ff 1px solid;
+        background-color: transparent;
+        border-radius: 5px;
+    }
+
+    .button-continue {
+        background-color: #0066ff;
+        border: none;
+        color: #fefefe;
+        border-radius: 5px;
+        width: 134px;
+        height: 40px;
+    }
+
+    .rules-container {
+        width: 800px;
+    }
+
+    .button-continue:hover {
+        transition: 50ms ease-in;
+        background-color: #005CE6;
+    }
+
+    .button-contact:hover {
+        transition: 100ms ease-in;
+        border: #005CE6 2px solid;
+    }
+
+    @media screen and (max-width: 1020px) {
+        main {
+            box-sizing: border-box;
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            place-items: center;
+            row-gap: 40px;
+        }
+
+        #img-customer {
+            width: 350px;
+        }
+
+        .rules-container {
+            width: auto;
+        }
+    }
+</style>
+</head>
+
+<body>
+    <header>
+        <div class="logo-div">
+            <img class="logo-img" src="src/logo.png" alt="Logo empresa" width="50" height="50">
+            <h1 id="logo-name">ResolveIT</h1>
+        </div>
+        <nav class="nav-links">
+            <a href="">Devoluciones</a>
+            <a href="">Historial</a>
+            <a href="">FAQ</a>
+            <a href="">Contactenos</a>
+        </nav>
+        <div id="header-right">
+            <button class="login-button nav-button">Login</button>
+            <button class="register-button nav-button">Register</button>
+        </div>
+    </header>
+
+    <!-- AQUI SU CODIGO -->
+    <main class="main-container" style="margin: 25px 60px 0 60px">
+        <img id="img-customer" style=" object-fit: cover; margin: 0" src="src/customer-service.png"
+            alt="Mujer haciendo una llamada">
+        <div class="rules-container" style="margin: 0;">
+            <p><b>Antes de pedir tu devolución debes tener presente los siguientes puntos:</b></p>
+            <ol>
+                <li>EL artículo comprado no sobrepase el tiempo límite de devoluciín indicado en la factura</li>
+                <li>El producto no debe contener nigun desperfecto producido por golpes o rayones, debe estar en
+                    condiciones originales</li>
+                <li>En caso de que el producto cuente con varias piezas, presentar todas al momento de acercarse al
+                    establecimiento
+                </li>
+                <li>El motivo de la devolución debe estar dentro de las políticas de devolución de la empresa</li>
+            </ol>
+        </div>
+        <button class="button-main button-contact">Contactar con un asesor</button>
+        <button class="button-main button-continue">Continuar</button>
+    </main>
+
+    <footer>
+        <h3>Derechos reservados &#169</h3>
+        <p>SOFT S MAT 6-1</p>
+        <h4>Ciencias Matematicas y Fisicas</h4>
+        <p>Grupo 9</p>
+    </footer>
+</body>
+
+</html>
