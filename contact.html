@@ -9,6 +9,7 @@
     <title>ResolveIT</title>
     <style>
         main {
+            box-sizing: border-box;
             width: 95%;
             margin: auto;
             display: grid;
@@ -54,6 +55,8 @@
         .contact-button:hover {
             background-color: #464853;
             color: #fefefe;
+            transition: 50ms ease;
+
         }
 
         #header-img {
@@ -64,25 +67,30 @@
 
         .contact-options {
             box-sizing: border-box;
-            background-color: #f7f7f8;
+            border: 3px solid #ececec;
             display: flex;
             flex-direction: column;
             border-radius: 5px;
-            margin: 20px;
-            padding: 15px;
-            height: 90%;
+            padding: 20px;
+            height: 100%;
             max-width: 300px;
         }
 
-        .contact-options a{
+        .contact-options a {
             color: #005CE6;
         }
 
-        .contact-options a:hover{
+        .contact-options:hover {
+            box-shadow: 0 0 15px 0 #2224;
+            transition: 50ms ease;
+
+        }
+
+        .contact-options a:hover {
             color: #0066FF;
         }
 
-        .type-contact{
+        .type-contact {
             margin-left: 0px;
             font-weight: bold;
         }
@@ -93,8 +101,8 @@
             margin-bottom: 20px;
         }
 
-        
-        @media screen and (max-width: 700px) {
+
+        @media screen and (max-width: 800px) {
             main {
                 width: 95%;
                 grid-template-columns: 90%;
@@ -113,7 +121,8 @@
             .contact-asesor {
                 flex-direction: column;
             }
-            #header-img{
+
+            #header-img {
                 overflow: visible;
                 height: 150px;
                 width: 100%;
@@ -124,6 +133,11 @@
                 width: 90%;
                 max-width: none;
                 margin: 10px auto;
+                height: 90%;
+            }
+
+            .contact-options img, .contact-options p, .contact-options a {
+                margin-bottom: 8px;
             }
 
             .header-info h4,
@@ -196,7 +210,7 @@
     </main>
 
     <footer>
-        <h3>Derechos reservados &#169</h3>
+        <h3>Derechos reservados &#169;</h3>
         <p>SOFT S MAT 6-1</p>
         <h4>Ciencias Matematicas y Fisicas</h4>
         <p>Grupo 9</p>
