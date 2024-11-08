@@ -2,12 +2,12 @@
 <html lang="es">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="author" content="Cesar Tipan" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="styles/style.css" />
+    <meta charset="UTF-8">
+    <meta name="author" content="Cesar Tipan">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    
+
     <title>ResolveIT</title>
     <style>
         main {
@@ -22,7 +22,7 @@
             gap: 1rem;
             margin-bottom: 1rem;
         }
-        
+
         .search-buttons {
             display: flex;
             gap: 1rem;
@@ -41,7 +41,7 @@
             border: none;
         }
 
-        .search-container button p{
+        .search-container button p {
             margin-left: 0.5rem;
         }
 
@@ -162,11 +162,11 @@
 
         @media (max-width: 768px) {
             .search-container {
-                grid-template-columns: 1fr; 
+                grid-template-columns: 1fr;
             }
 
             .search-container button {
-                width: auto; 
+                width: auto;
             }
 
             .pagination {
@@ -182,14 +182,15 @@
 
         @media (max-width: 480px) {
             main {
-                padding: 1rem; 
+                padding: 1rem;
             }
 
             h1 {
                 font-size: 1.5rem;
             }
 
-            th, td {
+            th,
+            td {
                 padding: 0.75rem;
             }
         }
@@ -203,10 +204,10 @@
             <h1 id="logo-name">ResolveIT</h1>
         </div>
         <nav class="nav-links">
-            <a href="">Devoluciones</a>
-            <a href="">Historial</a>
-            <a href="">FAQ</a>
-            <a href="">Contactenos</a>
+            <a href>Devoluciones</a>
+            <a href>Historial</a>
+            <a href>FAQ</a>
+            <a href>Contactenos</a>
         </nav>
         <div id="header-right">
             <button class="login-button nav-button">Login</button>
@@ -218,11 +219,11 @@
         <section class="search-header">
             <h1>Historial de Tickets</h1>
             <div class="search-container">
-                <input placeholder="Buscar..." type="text" />
+                <input placeholder="Buscar..." type="text">
                 <div id="search-icons-container" class="search-buttons">
-                    <button class="search"><i class="fas fa-search"></i><p>Buscar</p></button>
-                    <button class="filter"><i class="fas fa-filter"></i><p>Filtrar</p></button>
-                    <button class="sort"><i class="fas fa-sort"></i><p>Ordenar</p></button>
+                    <button class="search"><i class="fas fa-search"></i><span>Buscar</span></button>
+                    <button class="filter"><i class="fas fa-filter"></i><span>Filtrar</span></button>
+                    <button class="sort"><i class="fas fa-sort"></i><span>Ordenar</span></button>
                 </div>
             </div>
         </section>
@@ -247,8 +248,10 @@
                             <div class="ticket-status">
                                 <div class="ticket-indicator status-open"></div>
                                 <div style="margin-left: 10px;">
-                                    <div class="ticket-title">Problema con el envío</div>
-                                    <div class="ticket-date">Última actualización: Ayer</div>
+                                    <div class="ticket-title">Problema con
+                                        el envío</div>
+                                    <div class="ticket-date">Última
+                                        actualización: Ayer</div>
                                 </div>
                             </div>
                         </td>
@@ -267,8 +270,10 @@
                             <div class="ticket-status">
                                 <div class="ticket-indicator status-in-progress"></div>
                                 <div style="margin-left: 10px;">
-                                    <div class="ticket-title">Solicitud de reembolso</div>
-                                    <div class="ticket-date">Última actualización: Hoy</div>
+                                    <div class="ticket-title">Solicitud de
+                                        reembolso</div>
+                                    <div class="ticket-date">Última
+                                        actualización: Hoy</div>
                                 </div>
                             </div>
                         </td>
@@ -287,8 +292,10 @@
                             <div class="ticket-status">
                                 <div class="ticket-indicator status-resolved"></div>
                                 <div style="margin-left: 10px;">
-                                    <div class="ticket-title">Consulta sobre producto</div>
-                                    <div class="ticket-date">Última actualización: 02/11/2024</div>
+                                    <div class="ticket-title">Consulta sobre
+                                        producto</div>
+                                    <div class="ticket-date">Última
+                                        actualización: 02/11/2024</div>
                                 </div>
                             </div>
                         </td>
@@ -307,8 +314,10 @@
                             <div class="ticket-status">
                                 <div class="ticket-indicator status-closed"></div>
                                 <div style="margin-left: 10px;">
-                                    <div class="ticket-title">Devolución de producto</div>
-                                    <div class="ticket-date">Última actualización: 01/11/2024</div>
+                                    <div class="ticket-title">Devolución de
+                                        producto</div>
+                                    <div class="ticket-date">Última
+                                        actualización: 01/11/2024</div>
                                 </div>
                             </div>
                         </td>
@@ -327,8 +336,10 @@
                             <div class="ticket-status">
                                 <div class="ticket-indicator status-on-hold"></div>
                                 <div style="margin-left: 10px;">
-                                    <div class="ticket-title">Problema con la garantía</div>
-                                    <div class="ticket-date">Última actualización: 02/11/2024</div>
+                                    <div class="ticket-title">Problema con
+                                        la garantía</div>
+                                    <div class="ticket-date">Última
+                                        actualización: 02/11/2024</div>
                                 </div>
                             </div>
                         </td>
@@ -347,8 +358,10 @@
                             <div class="ticket-status">
                                 <div class="ticket-indicator status-open"></div>
                                 <div style="margin-left: 10px;">
-                                    <div class="ticket-title">Fallo en el dispositivo</div>
-                                    <div class="ticket-date">Última actualización: Hoy</div>
+                                    <div class="ticket-title">Fallo en el
+                                        dispositivo</div>
+                                    <div class="ticket-date">Última
+                                        actualización: Hoy</div>
                                 </div>
                             </div>
                         </td>
@@ -364,7 +377,7 @@
                     </tr>
                 </tbody>
             </table>
-            
+
         </section>
 
         <section class="pagination">
@@ -380,7 +393,7 @@
     </main>
 
     <footer>
-        <h3>Derechos reservados &#169</h3>
+        <h3>Derechos reservados &#169;</h3>
         <p>SOFT S MAT 6-1</p>
         <h4>Ciencias Matematicas y Fisicas</h4>
         <p>Grupo 9</p>
