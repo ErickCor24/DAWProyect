@@ -41,20 +41,6 @@
             border-radius: 5px;
             border: 1px solid #ddd;
         }
-        .nav-button {
-            background-color: #005CE6; /* Color similar al del navbar */
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            font-size: 16px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-
-        .nav-button:hover {
-            background-color: #0041A6;
-        }
         @media screen and (max-width: 1043px) {
             header {
                 height: auto;
@@ -97,27 +83,28 @@
 </head>
 <body>
     <header>
-        <div class="logo-div">
+        <a href="home.html" class="logo-div" style="color: #000;">
             <img class="logo-img" src="src/logo.png" alt="Logo empresa" width="50" height="50">
             <h1 id="logo-name">ResolveIT</h1>
-        </div>
+        </a>
         <nav class="nav-links">
-            <a href="">Devoluciones</a>
-            <a href="">Historial</a>
-            <a href="">FAQ</a>
-            <a href="">Contactenos</a>
+            <a href="returns.html">Devoluciones</a>
+            <a href="client-tickets.html">Historial</a>
+            <a href="faq.html">FAQ</a>
+            <a href="contact.html">Contactenos</a>
         </nav>
         <div id="header-right">
             <button class="login-button nav-button">Login</button>
             <button class="register-button nav-button">Register</button>
         </div>
     </header>
+
     <main>
         <section id="first-content">
             <h2>¿Cómo podemos ayudarte?</h2>
             <p>Facilitamos la interacción entre clientes y empresas, permitiéndole registrar sus solicitudes de soporte, garantías o devoluciones.</p>
             <input type="text" class="input-style" placeholder="Escribe tu pregunta aquí">
-            <button class="Buscar nav-button">Buscar</button>
+            <button class="register-button nav-button">Buscar</button>
         </section>
         <section class="faq-section">
             <h3>Preguntas frecuentes</h3>
@@ -161,6 +148,7 @@
             </div>
         </section>
     </main>  
+    
     <footer>
         <h3>Derechos reservados &#169;</h3>
         <p>SOFT S MAT 6-1</p>
