@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Cesar Tipan">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <title>ResolveIT</title>
+    <style>
+        main {
+            padding: 2rem;
+            background-color: #FFFFFF;
+        }
+
+        .search-container {
+            display: grid;
+            grid-template-columns: auto auto;
+            justify-content: end;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .search-buttons {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .search-container input {
+            border: 1px solid #d1d5db;
+            padding: 0.5rem;
+            border-radius: 0.25rem;
+        }
+
+        .search-container button {
+            border-radius: 0.25rem;
+            display: flex;
+            align-items: center;
+            border: none;
+        }
+
+        .search-container button p {
+            margin-left: 0.5rem;
+        }
+
+        .search-container button.search {
+            background-color: #0066ff;
+            color: white;
+        }
+
+        .search-container button.sort,
+        .search-container button.filter {
+            background-color: #e5e7eb;
+        }
+
+        table {
+            width: 100%;
+            background-color: white;
+            border-radius: 0.5rem;
+            overflow: hidden;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        thead {
+            background-color: #464853;
+            color: white;
+        }
+
+        th,
+        td {
+            padding: 1rem;
+            text-align: left;
+        }
+
+        tr {
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .ticket-status {
+            display: flex;
+            align-items: center;
+        }
+
+        .ticket-status i {
+            color: #10b981;
+            margin-right: 0.5rem;
+        }
+
+        .pagination {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            margin-top: 1rem;
+        }
+
+        .pagination .rows-per-page {
+            margin-right: 50px;
+        }
+
+        .pagination button {
+            padding: 0.5rem;
+            background-color: #e5e7eb;
+            border-radius: 0.25rem;
+        }
+
+        .pagination .navigation {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .ticket-status {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .ticket-indicator {
+            border-style: solid;
+            border-width: 10px;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-weight: bold;
+        }
+
+        .status-open {
+            background-color: #4CAF50;
+        }
+
+        .status-in-progress {
+            background-color: #FFEB3B;
+        }
+
+        .status-resolved {
+            background-color: #2196F3;
+        }
+
+        .status-closed {
+            background-color: #9E9E9E;
+        }
+
+        .status-on-hold {
+            background-color: #FF9800;
+        }
+
+        .ticket-title {
+            font-weight: bold;
+        }
+
+        .ticket-date {
+            font-size: 0.875rem;
+            color: #6b7280;
+        }
+
+        @media (max-width: 768px) {
+            .search-container {
+                grid-template-columns: 1fr;
+            }
+
+            .search-container button {
+                width: auto;
+            }
+
+            .pagination {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .pagination .rows-per-page {
+                margin-right: 0;
+                margin-bottom: 0.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            main {
+                padding: 1rem;
+            }
+
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            th,
+            td {
+                padding: 0.75rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <a href="home.html" class="logo-div" style="color: #000;">
+            <img class="logo-img" src="src/logo.png" alt="Logo empresa" width="50" height="50">
+            <h1 id="logo-name">ResolveIT</h1>
+        </a>
+        <nav class="nav-links">
+            <a href="returns.html">Devoluciones</a>
+            <a href="client-tickets.html">Historial</a>
+            <a href="faq.html">FAQ</a>
+            <a href="contact.html">Contactenos</a>
+        </nav>
+        <div id="header-right">
+            <button class="login-button nav-button">Login</button>
+            <button class="register-button nav-button">Register</button>
+        </div>
+    </header>
+
+    <main>
+        <section class="search-header">
+            <h1>Historial de Tickets</h1>
+            <div class="search-container">
+                <input placeholder="Buscar..." type="text">
+                <div id="search-icons-container" class="search-buttons">
+                    <button class="search"><i class="fas fa-search"></i><span>Buscar</span></button>
+                    <button class="filter"><i class="fas fa-filter"></i><span>Filtrar</span></button>
+                    <button class="sort"><i class="fas fa-sort"></i><span>Ordenar</span></button>
+                </div>
+            </div>
+        </section>
+
+        <section class="ticket-list">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Detalles</th>
+                        <th>Cliente</th>
+                        <th>Fecha de Creación</th>
+                        <th>Última Actualización</th>
+                        <th>Tipo</th>
+                        <th>Prioridad</th>
+                        <th>Estado</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <div class="ticket-status">
+                                <div class="ticket-indicator status-open"></div>
+                                <div style="margin-left: 10px;">
+                                    <div class="ticket-title">Problema con
+                                        el envío</div>
+                                    <div class="ticket-date">Última
+                                        actualización: Ayer</div>
+                                </div>
+                            </div>
+                        </td>
+                        <td>Cesar Tipan</td>
+                        <td>31/10/2024</td>
+                        <td>02/11/2024</td>
+                        <td>Soporte Técnico</td>
+                        <td>Alta</td>
+                        <td>Abierto</td>
+                        <td>
+                            <button>Ver Detalles</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="ticket-status">
+                                <div class="ticket-indicator status-in-progress"></div>
+                                <div style="margin-left: 10px;">
+                                    <div class="ticket-title">Solicitud de
+                                        reembolso</div>
+                                    <div class="ticket-date">Última
+                                        actualización: Hoy</div>
+                                </div>
+                            </div>
+                        </td>
+                        <td>Maria Gonzalez</td>
+                        <td>30/10/2024</td>
+                        <td>04/11/2024</td>
+                        <td>Reembolso</td>
+                        <td>Media</td>
+                        <td>En Progreso</td>
+                        <td>
+                            <button>Ver Detalles</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="ticket-status">
+                                <div class="ticket-indicator status-resolved"></div>
+                                <div style="margin-left: 10px;">
+                                    <div class="ticket-title">Consulta sobre
+                                        producto</div>
+                                    <div class="ticket-date">Última
+                                        actualización: 02/11/2024</div>
+                                </div>
+                            </div>
+                        </td>
+                        <td>Andres Romero</td>
+                        <td>28/10/2024</td>
+                        <td>02/11/2024</td>
+                        <td>Consulta</td>
+                        <td>Baja</td>
+                        <td>Resuelto</td>
+                        <td>
+                            <button>Ver Detalles</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="ticket-status">
+                                <div class="ticket-indicator status-closed"></div>
+                                <div style="margin-left: 10px;">
+                                    <div class="ticket-title">Devolución de
+                                        producto</div>
+                                    <div class="ticket-date">Última
+                                        actualización: 01/11/2024</div>
+                                </div>
+                            </div>
+                        </td>
+                        <td>Lucia Martinez</td>
+                        <td>25/10/2024</td>
+                        <td>01/11/2024</td>
+                        <td>Devolución</td>
+                        <td>Alta</td>
+                        <td>Cerrado</td>
+                        <td>
+                            <button>Ver Detalles</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="ticket-status">
+                                <div class="ticket-indicator status-on-hold"></div>
+                                <div style="margin-left: 10px;">
+                                    <div class="ticket-title">Problema con
+                                        la garantía</div>
+                                    <div class="ticket-date">Última
+                                        actualización: 02/11/2024</div>
+                                </div>
+                            </div>
+                        </td>
+                        <td>Pedro López</td>
+                        <td>29/10/2024</td>
+                        <td>02/11/2024</td>
+                        <td>Soporte Técnico</td>
+                        <td>Media</td>
+                        <td>En Espera</td>
+                        <td>
+                            <button>Ver Detalles</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="ticket-status">
+                                <div class="ticket-indicator status-open"></div>
+                                <div style="margin-left: 10px;">
+                                    <div class="ticket-title">Fallo en el
+                                        dispositivo</div>
+                                    <div class="ticket-date">Última
+                                        actualización: Hoy</div>
+                                </div>
+                            </div>
+                        </td>
+                        <td>Ana Torres</td>
+                        <td>03/11/2024</td>
+                        <td>04/11/2024</td>
+                        <td>Soporte Técnico</td>
+                        <td>Alta</td>
+                        <td>Abierto</td>
+                        <td>
+                            <button>Ver Detalles</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </section>
+
+        <section class="pagination">
+            <div class="navigation">
+                <div class="rows-per-page">Tickets por página: 8</div>
+                <div>1-8 de 400</div>
+                <div class="navigation-arrows">
+                    <button>&lt;</button>
+                    <button>&gt;</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <h3>Derechos reservados &#169;</h3>
+        <p>SOFT S MAT 6-1</p>
+        <h4>Ciencias Matematicas y Fisicas</h4>
+        <p>Grupo 9</p>
+    </footer>
+</body>
+
+</html>

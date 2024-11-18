@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Jimmy Josue Páez Velasco">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/style.css">
+    <title>ResolveIT</title>
+    <style>
+        /* Main y secciones */
+        main {
+            padding: 20px 20px;
+            text-align: center;
+        }
+        #first-content h2 {
+            color: #333;
+        }
+        
+        .faq-section h3 {
+            margin-bottom: 20px;
+        }
+        .faq-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+        }
+        .faq-item {
+            background-color: white;
+            border-radius: 8px;  
+            font-size: 14px;
+        }
+        .faq-item h4 {
+            color: #0066FF;
+            font-size: 14px;
+        }
+        .input-style {
+            padding: 10px;
+            width: 80%;
+            max-width: 400px;
+            margin-top: 20px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+
+        @media screen and (max-width: 1043px) {
+            header {
+                height: auto;
+                flex-direction: column;
+                padding-bottom: 10px;
+            }
+
+            .nav-links {
+                padding-bottom: 15px;
+            }
+
+            footer {
+                height: auto;
+            }
+
+            .faq-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media screen and (max-width: 700px) {
+            .faq-grid {
+                grid-template-columns: 1fr;
+            }
+
+            header {
+                padding-bottom: 20px;
+            }
+
+            .nav-links {
+                text-align: center;
+                padding-bottom: 20px;
+            }
+
+            footer {
+                text-align: center;
+                padding-top: 10px;
+            }
+        }       
+    </style>
+</head>
+<body>
+    <header>
+        <a href="home.html" class="logo-div" style="color: #000;">
+            <img class="logo-img" src="src/logo.png" alt="Logo empresa" width="50" height="50">
+            <h1 id="logo-name">ResolveIT</h1>
+        </a>
+        <nav class="nav-links">
+            <a href="returns.html">Devoluciones</a>
+            <a href="client-tickets.html">Historial</a>
+            <a href="faq.html">FAQ</a>
+            <a href="contact.html">Contactenos</a>
+        </nav>
+        <div id="header-right">
+            <button class="login-button nav-button">Login</button>
+            <button class="register-button nav-button">Register</button>
+        </div>
+    </header>
+
+    <main>
+        <section id="first-content">
+            <h2>¿Cómo podemos ayudarte?</h2>
+            <p>Facilitamos la interacción entre clientes y empresas, permitiéndole registrar sus solicitudes de soporte, garantías o devoluciones.</p>
+            <input type="text" class="input-style" placeholder="Escribe tu pregunta aquí">
+            <button class="Buscar nav-button">Buscar</button>
+        </section>
+        <section class="faq-section">
+            <h3>Preguntas frecuentes</h3>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h4>¿Cuál es el estado de mi solicitud?</h4>
+                    <p>Consulta el estado de tus solicitudes en tiempo real.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>Cómo contactar a soporte</h4>
+                    <p>Aprende a comunicarte con nuestro equipo de soporte.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>Políticas de devolución</h4>
+                    <p>Infórmate sobre nuestras políticas y procesos de devolución.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>¿Cuánto tarda una solicitud de garantía o devolución?</h4>
+                    <p>Generalmente, de 3 a 5 días hábiles.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>¿Cómo edito o cancelo una solicitud?</h4>
+                    <p>Consulta sobre la cancelacion de solicitud.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>¿Recibiré notificaciones sobre mi solicitud?</h4>
+                    <p>Sí, por correo y en la aplicación.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>¿Qué hago si no recibo respuesta?</h4>
+                    <p>Contacta al soporte por llamada o correo para más información.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>¿Puedo ver mi historial de solicitudes?</h4>
+                    <p>Sí, en la sección “Historial” de tu panel.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>¿Puedo asignar prioridad a mis solicitudes?</h4>
+                    <p>Sí, selecciona el nivel de prioridad al registrar la solicitud.(alta, media o baja)</p>
+                </div>
+            </div>
+        </section>
+    </main>  
+    
+    <footer>
+        <h3>Derechos reservados &#169;</h3>
+        <p>SOFT S MAT 6-1</p>
+        <h4>Ciencias Matematicas y Fisicas</h4>
+        <p>Grupo 9</p>
+    </footer>
+</body>
+</html>
