@@ -81,12 +81,9 @@ footer {
   width: 100%;
 }
 
-footer h3,
-p,
-img,
-h4 {
+footer h3,p,img,h4 {
   display: inline-block;
-  margin: 15px 60px;
+  margin: 15px 15px;
 }
 
 /*pseudo*/
@@ -103,6 +100,10 @@ h4 {
     flex-direction: column;
     padding-bottom: 10px;
   }
+
+    .nav-links {
+      padding-bottom: 15px;
+    }
 
   .nav-links {
     padding-bottom: 15px;
