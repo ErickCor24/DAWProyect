@@ -7,6 +7,21 @@ body {
   flex-direction: column;
 }
 
+::-webkit-scrollbar{
+  width: 10px;
+}
+
+::-webkit-scrollbar-track{
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb{
+  background: #464853;
+  border-radius: 15px;
+  border: #ececec 2px solid;
+
+}
+
 a {
   text-decoration: none;
 }
@@ -112,4 +127,11 @@ footer h3,p,img,h4 {
   footer {
     height: auto;
   }
+}
+
+.input-design {
+  padding: 10px;
+  margin-top: 20px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
 }
