@@ -134,4 +134,7 @@ footer h3,p,img,h4 {
   margin-top: 20px;
   border-radius: 5px;
   border: 1px solid #ddd;
+  &:focus {
+    outline: #0066ff solid 2px; /* Quita el contorno */
+  }
 }
