@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/style.css">
+    <meta name="author" content="Erick Alejandro Cordova Viteri">
+    <title>ResolveIT</title>
+
+    <style>
+        .container-request {
+            margin: 15px 60px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .input-design {
+            margin: 0;
+            margin-bottom: 20px;
+            width: 80%;
+        }
+
+        .input-text {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            column-gap: 0px;
+        }
+
+        .block-input {
+            display: flex;
+            flex-direction: column;
+
+            & label {
+                margin-bottom: 5px;
+            }
+
+            & textarea {
+                box-sizing: border-box;
+                resize: none;
+                width: 100%;
+                height: 160px;
+                font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            }
+        }
+
+        input[type="submit"] {
+            width: 143px;
+            height: 40px;
+            background-color: #0066ff;
+            color: #fefefe;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+    </style>
+
+</head>
+
+<body>
+    <header>
+        <div class="logo-div">
+            <img class="logo-img" src="src/logo.png" alt="Logo empresa" width="50" height="50">
+            <h1 id="logo-name">ResolveIT</h1>
+        </div>
+        <nav class="nav-links">
+            <a href="returns.html">Devoluciones</a>
+            <a href="client-tickets.html">Historial</a>
+            <a href="faq.html">FAQ</a>
+            <a href="contact.html">Contactenos</a>
+        </nav>
+        <div id="header-right">
+            <button class="login-button nav-button">Login</button>
+            <button class="register-button nav-button">Register</button>
+        </div>
+    </header>
+
+    <!-- AQUI SU CODIGO -->
+    <main>
+        <form class="container-request" name="return-form" action="" method="GET" target="_self">
+            <div class="input-text">
+                <div class="block-input">
+                    <label>Nombre<span style="font-size: 0.8rem; color: #f00;">*</span></label>
+                    <input class="input-design" type="text" name="name" placeholder="Ingrese sus nombres aqui">
+                </div>
+                <div class="block-input">
+                    <label>Apellido<span style="font-size: 0.8rem; color: #f00;">*</span></label>
+                    <input class="input-design" type="text" name="lastname" placeholder="Ingrese sus apellidos aqui">
+                </div>
+                <div class="block-input">
+                    <label>Correo electrónico<span style="font-size: 0.8rem; color: #f00;">*</span></label>
+                    <input class="input-design" type="text" name="email" placeholder="Ingrese su e-mail aqui">
+                </div>
+                <div class="block-input">
+                    <label>Seleccione el tipo de problema<span style="font-size: 0.8rem; color: #f00;">*</span></label>
+                    <select class="input-design" name="motive-return">
+                        <option value="default">Seleccione una opcion</option>
+                        <option value="p-roto">Producto roto</option>
+                        <option value="p-mal-estado">Producto mal estado</option>
+                        <option value="p-no-entregado">Producto no entregado</option>
+                        <option value="p-no-funciona">Producto no funciona</option>
+                        <option value="p-dejo-funcionar">Producto dejo de funcionar</option>
+                    </select>
+                </div>
+            </div>
+            <div class="block-input">
+                <label>Explique el motivo de la devolucion con mas detalle<span style="font-size: 0.8rem; color: #f00;">*</span></label>
+                <textarea class="input-design" name="comment" placeholder="Ingrese el motivo aqui"></textarea>
+            </div>
+            <div class="block-check">
+                <input type="checkbox" class="check-design" name="comment"></input>
+                <label>Esta de acuerdo con las normas y políticas de devoluciones de la empresa<span style="font-size: 0.8rem; color: #f00;">*</span></label>
+            </div>
+            <input type="submit" value="Enviar">
+        </form>
+    </main>
+
+    <footer>
+        <h3>Derechos reservados &#169;</h3>
+        <p>SOFT S MAT 6-1</p>
+        <h4>Ciencias Matematicas y Fisicas</h4>
+        <p>Grupo 9</p>
+    </footer>
+</body>
+
+</html>
