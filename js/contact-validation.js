@@ -45,8 +45,11 @@ const validateForm = () => {
 
     //Validación de mensaje
     let message = document.getElementById("message");
-    if(message.value.length <= 0){
-        alert("Este campo es requerido. Detalle el motivo de su solicitud");
+    if(message.value === ""){
+        alert("Este campo es requerido. Ingrese el motivo de su solicitud");
+        validate = false;
+    }else if(message.value.length < 10){
+        alert("Mínimo 10 caracteres. Detalle el motivo de su solicitud");
         validate = false;
     }
 
