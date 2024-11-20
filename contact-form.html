@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Camillie Ayovi Villafuerte">
+    <link rel="stylesheet" href="styles/style.css">
+    <title>ResolveIT</title>
+    <style>
+        main {
+            box-sizing: border-box;
+            width: 90%;
+            margin: auto;
+            padding: 10px;
+            display: flex;
+        }
+
+        label {
+            font-size: 0.9rem;
+        }
+
+        .div-group-fields {
+            display: flex;
+            flex-direction: row;
+            gap: 30px;
+        }
+
+        .div-field-vertical {
+            width: 100%;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .div-field-horizontal {
+            width: 100%;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: row;
+            gap: 5px;
+        }
+
+        .div-field-horizontal label {
+            margin-right: 10px;
+        }
+
+        .div-form {
+            width: 100%;
+            min-width: 90px;
+            padding: 20px;
+            border: 3px solid #ececec;
+            border-radius: 10px;
+        }
+
+        .div-form label {
+            word-wrap: break-word;
+        }
+
+        .input-design {
+            margin: 0;
+            margin-bottom: 20px;
+            margin-top: 5px;
+        }
+
+        #div-reason-contact div {
+            padding-top: 5px;
+        }
+
+        .radio-buttons {
+            display: flex;
+            flex-direction: row;
+            gap: 15px;
+        }
+
+        .radio-buttons label {
+            font-size: small;
+        }
+
+        .div-btn {
+            margin-top: 10px;
+            display: flex;
+            width: 100%;
+            box-sizing: border-box;
+            justify-content: center;
+            gap: 10px;
+            padding: 5px;
+        }
+
+        .input-submit-forms,
+        .input-reset-forms {
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            padding: 10px 20px 10px 20px;
+            width: fit-content;
+            word-wrap: break-word;
+        }
+
+        .input-submit-forms:hover,
+        .input-reset-forms:hover {
+            background-color: #464853;
+            color: #fefefe;
+            transition: 50ms ease;
+        }
+
+        @media screen and (max-width: 1020px) {
+            .div-group-fields {
+                flex-direction: column;
+                gap: 0px;
+            }
+
+            #div-language,
+            #div-reason-contact {
+                width: 100%;
+            }
+        }
+
+        @media screen and (max-width: 600px) {
+            .div-btn {
+                flex-direction: column;
+                gap: 5px;
+                align-items: center;
+                font-size: auto;
+            }
+            .radio-buttons {
+                flex-direction: column;
+                gap: 5px;
+            }
+
+            .input-submit-forms,
+            .input-reset-forms {
+                width: 90%;
+            }
+
+            #div-suscription {
+                flex-direction: column;
+            }
+            .div-field-horizontal{
+                flex-direction: column;
+
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo-div">
+            <img class="logo-img" src="src/logo.png" alt="Logo empresa" width="50" height="50">
+            <h1 id="logo-name">ResolveIT</h1>
+        </div>
+        <nav class="nav-links">
+            <a href="returns.html">Devoluciones</a>
+            <a href="client-tickets.html">Historial</a>
+            <a href="faq.html">FAQ</a>
+            <a href="contact.html">Contactenos</a>
+        </nav>
+        <div id="header-right">
+            <button class="login-button nav-button">Login</button>
+            <button class="register-button nav-button">Register</button>
+        </div>
+    </header>
+
+    <main>
+        <div class="div-form">
+            <form action="" id="form-contact" onsubmit="return validateForm()">
+                <h3 style="text-align: center;">Envía tus datos y uno de nuestros asesores se pondrá en contacto contigo
+                </h3>
+                <div class="div-group-fields">
+                    <div class="div-field-vertical">
+                        <label for="name">Nombres y apellidos:</label>
+                        <input type="text" id="name" class="input-design" placeholder="Ingrese sus nombres y apellidos">
+                    </div>
+                    <div class="div-field-vertical">
+                        <label>Email:</label>
+                        <input type="email" class="input-design" placeholder="Ingrese su email">
+                    </div>
+
+                </div>
+                <div class="div-group-fields">
+                    <div class="div-field-vertical">
+                        <label>Teléfono:</label>
+                        <input type="text" id="phone" class="input-design" placeholder="Ingrese su telefóno">
+                    </div>
+                    <div class="div-field-horizontal">
+                        <div id="div-language" class="div-field-vertical">
+                            <label for="options-language">Idioma:</label>
+                            <select name="options-language" id="options-language" class="input-design">
+                                <option id="info-option-language" value="info" selected disabled>Seleccione el idioma...</option>
+                                <option value="language1">Español</option>
+                                <option value="language2">Inglés</option>
+                                <option value="language3">Francés</option>
+                                <option value="language4">Alemán</option>
+                                <option value="language5">Italiano</option>
+                                <option value="language6">Portugués</option>
+                                <option value="language7">Chino</option>
+                                <option value="language8">Japonés</option>
+                                <option value="language9">Ruso</option>
+                                <option value="language10">Árabe</option>
+                                <option value="language11">Coreano</option>
+                                <option value="language12">Hindi</option>
+                                <option value="language13">Bengalí</option>
+                                <option value="language14">Holandés</option>
+                                <option value="language15">Sueco</option>
+                                <option value="language16">Noruego</option>
+                                <option value="language17">Danés</option>
+                                <option value="language18">Polaco</option>
+                                <option value="language19">Griego</option>
+                                <option value="language20">Turco</option>
+                                <option value="language21">Hebreo</option>
+                                <option value="language22">Vietnamita</option>
+                                <option value="language23">Tailandés</option>
+                                <option value="language24">Malayo</option>
+                                <option value="language25">Indonesio</option>
+                                <option value="language26">Finlandés</option>
+
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="div-field-horizontal" style="margin: 5px 0px 20px 0px;">
+                    <label style="width: fit-content;">Motivo de contacto:</label>
+                    <div class="radio-buttons">
+                        <div>
+                            <input type="radio" id="devoluciones" class="input-design" name="motivo-radio" value="Devoluciones" style="margin: 0;">
+                            <label for="devoluciones">Devoluciones</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="soporte" class="input-design" name="motivo-radio" value="Soporte" style="margin: 0;">
+                            <label for="soporte">Soporte</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="otros" class="input-design" name="motivo-radio" value="Otros" style="margin: 0;">
+                            <label for="otros">Otros</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="div-field-vertical">
+                    <label>Mensaje:</label>
+                    <textarea name="message" id="message" class="input-design" style="height: 60px; resize: none;"
+                        placeholder="Ingrese los detalles que deseas conocer, detalle el motivo de la solicitud"></textarea>
+                </div>
+                <div id="div-suscription" class="div-field-horizontal">
+                    <label>Acepto que me contacten via WhatsApp: </label>
+                    <input type="checkbox" id="suscripcion" name="suscripcion">
+                </div>
+                <div class="div-btn">
+                    <input class="input-submit-forms" type="submit" value="Enviar">
+                    <input class="input-reset-forms" type="reset" value="Cancelar">
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <h3>Derechos reservados &#169;</h3>
+        <p>SOFT S MAT 6-1</p>
+        <h4>Ciencias Matematicas y Fisicas</h4>
+        <p>Grupo 9</p>
+    </footer>
+    <script type="text/javascript" src="./js/contact-validation.js"></script>
+</body>
+
+</html>
