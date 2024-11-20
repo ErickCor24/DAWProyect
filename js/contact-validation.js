@@ -7,51 +7,76 @@ phone.addEventListener("keypress", (key) => {
 });
 
 const validateForm = () => {
+    deleteAlerts();
     let validate = true;
     const characters = /^[a-zA-Z\s]+$/;
     
     //Validación de nombre
     let name = document.getElementById("name");
     if(name.value === ""){
-        alert("Ingrese sus nombres y apellidos");
+        showAlert("Este campo es requerido. Ingrese sus nombres y apellidos",  name);
         validate = false;
     }else if(name.value.length < 10){
-        alert("Minimo 10 caracteres. Ingrese sus nombres y apellidos completos");
+        showAlert("Minimo 10 caracteres",  name);
         validate = false;
     }else if(!characters.test(name.value)){
-        alert("Nombres y apellido solo debe contener letras");
+        showAlert("Solo debe contener letras",  name);
+        validate = false;
+    }
+
+    //Validación de email
+    let email = document.getElementById("email");
+    if(email.value === ""){
+        showAlert("Este campo es requerido. Ingrese su email",  email);
         validate = false;
     }
 
     //Validación de teléfono
-    if(phone.value.length !== 10){
-        alert("Teléfono solo debe contener 10 dígitos");
+    if(phone.value === ""){
+        showAlert("Este campo es requerido. Ingrese su teléfono",  phone);
+        validate = false;
+    }else if(phone.value.length !== 10){
+        showAlert("Solo debe contener 10 dígitos",  phone);
         validate = false;
     }
 
     //Validación de idioma
     let language = document.querySelector("#options-language");
-    if(language.value === ""){
-        alert("Este campo es requerido. Seleccione el idioma");
+    if(language.value === "info"){
+        showAlert("Este campo es requerido. Seleccione el idioma",  language);
         validate = false;
     }
 
     //Validación del motivo de la solicitud de contacto
-    let reasonContact = document.querySelector('input[name = "motivo-radio"]:checked');
-    if(!reasonContact){
-        alert("Este campo es requerido. Seleccione el motivo de su solicitud");
+    let reasonContact = document.querySelector('input[name="motivo-radio"]:checked');
+    if (!reasonContact) {
+        let divRadios = document.querySelector(".radio-buttons");
+        showAlert("Este campo es requerido. Seleccione el motivo", divRadios);
         validate = false;
     }
 
     //Validación de mensaje
     let message = document.getElementById("message");
     if(message.value === ""){
-        alert("Este campo es requerido. Ingrese el motivo de su solicitud");
+        showAlert("Este campo es requerido. Ingrese el motivo de su solicitud",  message);
         validate = false;
     }else if(message.value.length < 10){
-        alert("Mínimo 10 caracteres. Detalle el motivo de su solicitud");
+        showAlert("Mínimo 10 caracteres. Detalle el motivo de su solicitud",  message);
         validate = false;
     }
 
     return validate;
+}
+
+const showAlert = (messageAlert, element) => {
+    let p = document.createElement("p");
+    p.textContent = messageAlert;
+    p.classList.add("alert");
+    element.parentNode.firstElementChild.appendChild(p);
+}
+
+const deleteAlerts = () =>{
+    let alerts = document.querySelectorAll(".alert");
+    alerts.forEach(alertA => {alertA.remove();
+    });
 }

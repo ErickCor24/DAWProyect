@@ -68,6 +68,7 @@
             display: flex;
             flex-direction: row;
             gap: 15px;
+            width: fit-content;
         }
 
         .radio-buttons label {
@@ -99,6 +100,12 @@
             color: #fefefe;
             transition: 50ms ease;
         }
+        .alert{
+            color: #ee2200;
+            font-size: 0.7rem;
+            margin: 0;
+            margin-top: 3px;
+        }
 
         @media screen and (max-width: 1020px) {
             .div-group-fields {
@@ -111,7 +118,7 @@
             }
         }
 
-        @media screen and (max-width: 740px) {
+        @media screen and (max-width: 1035px) {
             #div-reason-contact{
                 flex-direction: column;
             }
@@ -170,23 +177,31 @@
                 </h3>
                 <div class="div-group-fields">
                     <div class="div-field-vertical">
-                        <label for="name">Nombres y apellidos:</label>
+                        <div class="div-field-horizontal">
+                            <label>Nombres y apellidos:</label>
+                        </div>
                         <input type="text" id="name" class="input-design" placeholder="Ingrese sus nombres y apellidos">
                     </div>
                     <div class="div-field-vertical">
-                        <label>Email:</label>
-                        <input type="email" class="input-design" placeholder="Ingrese su email">
+                        <div class="div-field-horizontal">
+                            <label>Email:</label>
+                        </div>
+                        <input type="email" id="email" class="input-design" placeholder="Ingrese su email">
                     </div>
 
                 </div>
                 <div class="div-group-fields">
                     <div class="div-field-vertical">
-                        <label>Teléfono:</label>
+                        <div class="div-field-horizontal">
+                            <label>Teléfono:</label>
+                        </div>
                         <input type="text" id="phone" class="input-design" placeholder="Ingrese su telefóno">
                     </div>
                     <div class="div-field-horizontal">
                         <div id="div-language" class="div-field-vertical">
-                            <label for="options-language">Idioma:</label>
+                            <div class="div-field-horizontal">
+                                <label for="options-language">Idioma:</label>
+                            </div>
                             <select name="options-language" id="options-language" class="input-design">
                                 <option id="info-option-language" value="info" selected disabled>Seleccione el idioma...</option>
                                 <option value="language1">Español</option>
@@ -221,7 +236,9 @@
                     </div>
                 </div>
                 <div id="div-reason-contact" class="div-field-horizontal" style="margin: 5px 0px 20px 0px;">
-                    <label style="width: fit-content;">Motivo de contacto:</label>
+                    <div class="div-field-horizontal" style="width: fit-content;">
+                        <label style="width: fit-content;">Motivo de contacto:</label>
+                    </div>
                     <div class="radio-buttons">
                         <div>
                             <input type="radio" id="devoluciones" class="input-design" name="motivo-radio" value="Devoluciones" style="margin: 0;">
@@ -242,7 +259,10 @@
                     </div>
                 </div>
                 <div class="div-field-vertical">
-                    <label>Mensaje:</label>
+                    <div class="div-field-horizontal">
+                        <label>Mensaje:</label>
+                    </div>
+                    
                     <textarea name="message" id="message" class="input-design" style="height: 60px; resize: none;"
                         placeholder="Ingrese los detalles que deseas conocer o detalle el motivo de la solicitud"></textarea>
                 </div>
