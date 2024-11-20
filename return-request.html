@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,6 +17,7 @@
         }
 
         .input-design {
+            box-sizing: border-box;
             margin: 0;
             margin-bottom: 20px;
             width: 80%;
@@ -44,6 +44,12 @@
                 height: 160px;
                 font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
             }
+
+            & [name="serial"] {
+                box-sizing: border-box;
+                width: 100%;
+
+            }
         }
 
         input[type="submit"] {
@@ -54,6 +60,24 @@
             border: none;
             border-radius: 5px;
             font-size: 1rem;
+        }
+
+        .block-submit {
+            display: flex;
+            gap: 25px;
+            align-items: center;
+        }
+
+        @media screen and (max-width: 800px) {
+            .input-text {
+                grid-template-columns: repeat(1, 1fr);
+
+                & .input-design {
+                    width: 100%;
+                }
+            }
+
+
         }
     </style>
 
@@ -79,23 +103,24 @@
 
     <!-- AQUI SU CODIGO -->
     <main>
-        <form class="container-request" name="return-form" action="" method="GET" target="_self">
+        <form id="return_form" class="container-request" name="return_form" action="" method="GET" target="_self">
             <div class="input-text">
                 <div class="block-input">
-                    <label>Nombre<span style="font-size: 0.8rem; color: #f00;">*</span></label>
+                    <label for="name">Nombre<span style="font-size: 0.8rem; color: #f00;">*</span></label>
                     <input class="input-design" type="text" name="name" placeholder="Ingrese sus nombres aqui">
                 </div>
                 <div class="block-input">
-                    <label>Apellido<span style="font-size: 0.8rem; color: #f00;">*</span></label>
+                    <label for="lastname">Apellido<span style="font-size: 0.8rem; color: #f00;">*</span></label>
                     <input class="input-design" type="text" name="lastname" placeholder="Ingrese sus apellidos aqui">
                 </div>
                 <div class="block-input">
-                    <label>Correo electrónico<span style="font-size: 0.8rem; color: #f00;">*</span></label>
+                    <label for="email">Correo electrónico<span style="font-size: 0.8rem; color: #f00;">*</span></label>
                     <input class="input-design" type="text" name="email" placeholder="Ingrese su e-mail aqui">
                 </div>
                 <div class="block-input">
-                    <label>Seleccione el tipo de problema<span style="font-size: 0.8rem; color: #f00;">*</span></label>
-                    <select class="input-design" name="motive-return">
+                    <label for="motive_return">Seleccione el tipo de problema<span
+                            style="font-size: 0.8rem; color: #f00;">*</span></label>
+                    <select class="input-design" name="motive_return">
                         <option value="default">Seleccione una opcion</option>
                         <option value="p-roto">Producto roto</option>
                         <option value="p-mal-estado">Producto mal estado</option>
@@ -106,14 +131,25 @@
                 </div>
             </div>
             <div class="block-input">
-                <label>Explique el motivo de la devolucion con mas detalle<span style="font-size: 0.8rem; color: #f00;">*</span></label>
-                <textarea class="input-design" name="comment" placeholder="Ingrese el motivo aqui"></textarea>
+                <label for="serial">Codigo del producto<span style="font-size: 0.8rem; color: #f00;">*</span></label>
+                <input type="number" class="input-design" name="serial" placeholder="Ingrese el codigo del producto">
             </div>
+            <div class="block-input">
+                <label for="comment">Explique el motivo de la devolucion con mas detalle<span
+                        style="font-size: 0.8rem; color: #f00;">*</span></label>
+                <textarea id="comment-ta" class="input-design" name="comment" placeholder="Ingrese el motivo aqui"></textarea>
+            </div>
+
             <div class="block-check">
-                <input type="checkbox" class="check-design" name="comment"></input>
-                <label>Esta de acuerdo con las normas y políticas de devoluciones de la empresa<span style="font-size: 0.8rem; color: #f00;">*</span></label>
+                <input type="checkbox" style="transform: scale(1.2);" class="check-design" name="check"></input>
+                <label for="check">Esta de acuerdo con las normas y políticas de devoluciones de la empresa<span
+                        style="font-size: 0.8rem; color: #f00;">*</span></label>
             </div>
-            <input type="submit" value="Enviar">
+
+            <div class="block-submit">
+                <input name="btn_form" type="submit" value="Enviar">
+                <label style="color: #f00;" id="error-message"></label>
+            </div>
         </form>
     </main>
 
@@ -123,6 +159,7 @@
         <h4>Ciencias Matematicas y Fisicas</h4>
         <p>Grupo 9</p>
     </footer>
+    <script src="js/ReturnRequest.js"></script>
 </body>
 
 </html>
