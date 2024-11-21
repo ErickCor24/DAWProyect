@@ -92,6 +92,7 @@
             padding: 10px 20px 10px 20px;
             width: fit-content;
             word-wrap: break-word;
+            align-content: center;
         }
 
         .input-submit-forms:hover,
@@ -129,7 +130,6 @@
                 flex-direction: column;
                 gap: 5px;
                 align-items: center;
-                font-size: auto;
             }
             .radio-buttons {
                 flex-direction: column;
@@ -154,10 +154,10 @@
 
 <body>
     <header>
-        <div class="logo-div">
+        <a href="home.html" class="logo-div" style="color: #000;">
             <img class="logo-img" src="src/logo.png" alt="Logo empresa" width="50" height="50">
             <h1 id="logo-name">ResolveIT</h1>
-        </div>
+        </a>
         <nav class="nav-links">
             <a href="returns.html">Devoluciones</a>
             <a href="client-tickets.html">Historial</a>
@@ -272,7 +272,7 @@
                 </div>
                 <div class="div-btn">
                     <input class="input-submit-forms" type="submit" value="Enviar">
-                    <input class="input-reset-forms" type="reset" value="Cancelar">
+                    <input class="input-reset-forms" type="reset" value="Cancelar" onclick="deleteAlerts()">
                 </div>
             </form>
         </div>
@@ -284,7 +284,7 @@
         <h4>Ciencias Matematicas y Fisicas</h4>
         <p>Grupo 9</p>
     </footer>
-    <script type="text/javascript" src="./js/contact-validation.js"></script>
+    <script type="text/javascript" src="./js/contactFormValidation.js"></script>
 </body>
 
 </html>
