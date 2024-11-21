@@ -101,6 +101,18 @@
             margin-bottom: 20px;
         }
 
+        .formatDiv{
+            background-color: #ececec;
+            transform: scale(1.2);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+        }
+
+        .reformatDiv{
+            transform: none;
+            background-color: transparent;
+        }
 
         @media screen and (max-width: 800px) {
             main {
@@ -136,7 +148,9 @@
                 height: 90%;
             }
 
-            .contact-options img, .contact-options p, .contact-options a {
+            .contact-options img, 
+            .contact-options p, 
+            .contact-options a {
                 margin-bottom: 8px;
             }
 
@@ -178,33 +192,33 @@
         <div class="contact-asesor">
             <div class="header-info">
                 <h4>Contáctanos</h4>
-                <button class="contact-button">Contacta directo con un asesor</button>
+                <button class="contact-button" onclick="window.location.href='contact-form.html'">Contacta directo con un asesor</button>
             </div>
             <div id="header-img">
                 <img id="img-contact" src="https://dbgallery.com/assets/img/Vector-Smart-Object3.png" alt="contact"
                     style="height: 95%; width: auto; margin: auto;">
             </div>
         </div>
-        <div class="contact-options">
+        <div class="contact-options" id="comunidad">
             <img src="https://cdn-icons-png.flaticon.com/128/2450/2450739.png" alt="comunidad" class="icon"
                 style="margin-left: 0px;">
             <p class="type-contact">Comunidad</p>
-            <p style="margin-left: 0px;">Envía un mensaje en nuestra comunidad, intercambia problemas y posibles
+            <p style="margin-left: 0px;" class="content-contact">Envía un mensaje en nuestra comunidad, intercambia problemas y posibles
                 soluciones</p>
             <a href="">Ver comunidad</a>
         </div>
-        <div class="contact-options">
+        <div class="contact-options" id="llamada">
             <img src="https://cdn-icons-png.flaticon.com/128/126/126509.png" alt="llamada" class="icon"
                 style="margin-left: 0px;">
             <p class="type-contact">Llamadas</p>
-            <p style="margin-left: 0px;">Llama a nuestra linea +1800 985 765</p>
+            <p style="margin-left: 0px;">Consulta nuestros horarios de atención y llama a nuestra linea telefónica +1800 985 765</p>
             <a href="">Ver horarios de atención</a>
         </div>
-        <div class="contact-options">
+        <div class="contact-options" id="correo">
             <img src="https://cdn-icons-png.flaticon.com/128/4597/4597536.png" alt="correo" class="icon"
                 style="margin-left: 0px;">
             <p class="type-contact">Correo</p>
-            <p style="margin-left: 0px;">Envíanos un correo y te responderemos a la mayor brevedad posible.</p>
+            <p style="margin-left: 0px;">Envíanos un correo y te responderemos a la mayor brevedad posible, sin importar el horario.</p>
             <a href="">Ver correos</a>
         </div>
     </main>
@@ -215,6 +229,44 @@
         <h4>Ciencias Matematicas y Fisicas</h4>
         <p>Grupo 9</p>
     </footer>
+
+    <script>
+        let contactOptions = document.querySelectorAll(".contact-options");
+        contactOptions.forEach(div => {
+            div.addEventListener("mouseover", (event) => formatSyle("mouseover", div));
+            div.addEventListener("mouseout", (event) => formatSyle("mouseout", div));
+        });
+
+        const formatSyle = (event, element) =>{
+            switch (event) {
+                case "mouseover":
+                    element.classList.add("formatDiv");
+                    if(element.id === "comunidad"){
+                        element.style.backgroundImage = "url('https://img.freepik.com/vector-gratis/ilustracion-concepto-grupo_114360-8711.jpg')";
+                    }
+                    if(element.id === "llamada"){
+                        element.style.backgroundImage = "url('https://img.freepik.com/vector-premium/mujer-operadora-servicio-al-cliente-auriculares-microfono-alrededor-elementos-soporte-iconos-llamada_662353-949.jpg')";
+                    }
+                    if(element.id === "correo"){
+                        element.style.backgroundImage = "url('https://img.freepik.com/vector-premium/trabajo-distancia-portatil-trabajo-distancia-personas-que-operan-portatiles_951778-20707.jpg')";
+                    }
+                    element.children[0].style.visibility = 'hidden';
+                    element.children[1].style.visibility = 'hidden';
+                    element.children[2].style.visibility = 'hidden';
+                    element.children[3].style.fontSize = '0.9rem'
+                    break;
+
+                case "mouseout":
+                    element.classList.remove("formatDiv");
+                    element.style.backgroundImage = "";
+                    element.children[0].style.visibility = 'visible';
+                    element.children[1].style.visibility = 'visible';
+                    element.children[2].style.visibility = 'visible';
+                    break;
+            }
+        }
+        
+    </script>
 </body>
 
 </html>
