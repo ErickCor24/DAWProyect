@@ -108,10 +108,12 @@
             background-position: center;
             background-size: cover;
         }
+
         .reformatDiv{
             transform: none;
             background-color: transparent;
         }
+
         @media screen and (max-width: 800px) {
             main {
                 width: 95%;
@@ -146,7 +148,9 @@
                 height: 90%;
             }
 
-            .contact-options img, .contact-options p, .contact-options a {
+            .contact-options img, 
+            .contact-options p, 
+            .contact-options a {
                 margin-bottom: 8px;
             }
 
@@ -225,6 +229,7 @@
         <h4>Ciencias Matematicas y Fisicas</h4>
         <p>Grupo 9</p>
     </footer>
+
     <script>
         let contactOptions = document.querySelectorAll(".contact-options");
         contactOptions.forEach(div => {
@@ -236,7 +241,6 @@
             switch (event) {
                 case "mouseover":
                     element.classList.add("formatDiv");
-
                     if(element.id === "comunidad"){
                         element.style.backgroundImage = "url('https://img.freepik.com/vector-gratis/ilustracion-concepto-grupo_114360-8711.jpg')";
                     }
