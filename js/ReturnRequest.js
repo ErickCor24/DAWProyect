@@ -46,8 +46,8 @@ frmReturnRequest.btn_form.addEventListener("click", (e) => {
 });
 
 function validateOnlyLetters(flag) {
-  const letterRegex = /^[a-zA-Z]+$/; //only letters
   if (letterRegex.test(flag)) {
+    const letterRegex = /^[-a-zA-Z\s]+$/; //only letters
     return true;
   } else return false;
 }
