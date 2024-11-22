@@ -10,7 +10,7 @@ const validateForm = () => {
     deleteAlerts();
     let validate = true;
     const nameCharacters = /^[a-zA-Z\sÁáÉéÍíÓóÚú]+$/;
-    const gmailCharacters = /^[a-zA-Z0-9._-]+@[a-zA-Z.-]+[a-zA-Z]+$/
+    const emailCharacters = /^[a-zA-Z0-9._-]+@[a-zA-Z.-]+[a-zA-Z]+$/
 ;
 
     //Validación de nombres y apellidos
@@ -31,7 +31,7 @@ const validateForm = () => {
     if (email.value === "") {
         showAlert("Este campo es requerido. Ingrese su email", email);
         validate = false;
-    } else if(!gmailCharacters.test(email.value)){
+    } else if(!emailCharacters.test(email.value)){
         showAlert("Solo se permite letras, números y caracteres especiales como . - _ @", email);
         validate = false;
     }
