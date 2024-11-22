@@ -1,7 +1,7 @@
 let phone = document.getElementById("phone");
 phone.addEventListener("keypress", (key) => {
     if (isNaN(key.key) || key.key === " " || key.key === "") {
-        alert("Solo números");
+        alert("Solo se permiten números");
         key.preventDefault();
     }
 });
@@ -9,9 +9,11 @@ phone.addEventListener("keypress", (key) => {
 const validateForm = () => {
     deleteAlerts();
     let validate = true;
-    const characters = /^[a-zA-Z\s]+$/;
+    const nameCharacters = /^[a-zA-Z\sÁáÉéÍíÓóÚú]+$/;
+    const gmailCharacters = /^[a-zA-Z0-9._-]+@[a-zA-Z.-]+[a-zA-Z]+$/
+;
 
-    //Validación de nombre y apellido
+    //Validación de nombres y apellidos
     let name = document.getElementById("name");
     if (name.value === "") {
         showAlert("Este campo es requerido. Ingrese sus nombres y apellidos", name);
@@ -19,8 +21,8 @@ const validateForm = () => {
     } else if (name.value.length < 10) {
         showAlert("Minimo 10 caracteres", name);
         validate = false;
-    } else if (!characters.test(name.value)) {
-        showAlert("Solo debe contener letras", name);
+    } else if (!nameCharacters.test(name.value)) {
+        showAlert("Solo se permiten letras", name);
         validate = false;
     }
 
@@ -28,6 +30,9 @@ const validateForm = () => {
     let email = document.getElementById("email");
     if (email.value === "") {
         showAlert("Este campo es requerido. Ingrese su email", email);
+        validate = false;
+    } else if(!gmailCharacters.test(email.value)){
+        showAlert("Solo se permite letras, números y caracteres especiales como . - _ @", email);
         validate = false;
     }
 
