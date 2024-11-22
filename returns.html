@@ -9,6 +9,7 @@
     <meta name="author" content="Erick Alejandro Cordova Viteri">
     <style>
         main {
+            margin: 25px auto 0 auto;
             width: 90%;
             box-sizing: border-box;
             display: grid;
@@ -29,13 +30,15 @@
         }
 
         .button-contact {
+            box-sizing: border-box;
             grid-column: 1/2;
             width: 200px;
             height: 60px;
             color: #0066ff;
-            border: #0066ff 1px solid;
+            border: #0066ff  2px solid;
             background-color: transparent;
             border-radius: 5px;
+            transition: 0.5s ease-in;
         }
 
         .button-continue {
@@ -50,7 +53,7 @@
 
         .rules-container {
             grid-column: 2/5;
-            width: 800px;
+            width: 80%;
         }
 
         .button-continue:hover {
@@ -59,13 +62,12 @@
         }
 
         .button-contact:hover {
-            transition: 100ms ease-in;
+            transition: 2s ease-in;
             border: #005CE6 2px solid;
         }
 
         @media screen and (max-width: 1020px) {
             main {
-                box-sizing: border-box;
                 grid-template-columns: repeat(1, 1fr);
                 place-items: center;
             }
@@ -110,7 +112,7 @@
         </div>
     </header>
 
-    <main class="main-container" style="margin: 25px 60px 0 60px">
+    <main class="main-container" >
         <img id="img-customer" style=" object-fit: cover; margin: 0" src="src/customer-service.png"
             alt="Mujer haciendo una llamada">
         <div class="rules-container" style="margin: 0;">
@@ -135,6 +137,7 @@
         <h4>Ciencias Matematicas y Fisicas</h4>
         <p>Grupo 9</p>
     </footer>
+    <script src="js/Return.js"></script>
 </body>
 
 </html>
