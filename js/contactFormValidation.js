@@ -10,8 +10,8 @@ const validateForm = () => {
     deleteAlerts();
     let validate = true;
     const nameCharacters = /^[a-zA-Z\sÁáÉéÍíÓóÚú]+$/;
-    const emailCharacters = /^[a-zA-Z0-9._-]+@[a-zA-Z.-]+[a-zA-Z]+$/
-;
+    const emailCharacters = /^[a-zA-Z0-9._-]+@[a-zA-Z.-]+[a-zA-Z]+$/;
+    const phoneCharacters = /^[0-9]+$/;
 
     //Validación de nombres y apellidos
     let name = document.getElementById("name");
@@ -40,7 +40,10 @@ const validateForm = () => {
     if (phone.value === "") {
         showAlert("Este campo es requerido. Ingrese su teléfono", phone);
         validate = false;
-    } else if (phone.value.length !== 10) {
+    } else if(!phoneCharacters.test(phone.value)){
+        showAlert("Solo se permite números", phone);
+        validate = false;
+    }else if (phone.value.length !== 10) {
         showAlert("Solo debe contener 10 dígitos", phone);
         validate = false;
     }
