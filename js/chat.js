@@ -1,8 +1,17 @@
+let lastMessageTime = 0;
+const messageInterval = 2000;
+
 document.querySelector('.chat-input-container').addEventListener('submit', (e) => {
     e.preventDefault();
 
     const input = document.querySelector('.chat-input');
     const message = input.value.trim();
+    const currentTime = Date.now();
+
+    if (currentTime - lastMessageTime < messageInterval) {
+        alert('Por favor, espera antes de enviar otro mensaje.');
+        return;
+    }
 
     if (message) {
         const chatHistory = document.querySelector('.chat-history');
@@ -10,6 +19,8 @@ document.querySelector('.chat-input-container').addEventListener('submit', (e) =
         clientMessage.classList.add('message', 'client');
         clientMessage.innerHTML = `<p><strong>Cliente:</strong> ${message}</p>`;
         chatHistory.appendChild(clientMessage);
+
+        lastMessageTime = currentTime;
 
         input.value = '';
 
@@ -28,6 +39,7 @@ document.querySelector('.chat-input-container').addEventListener('submit', (e) =
         }
     }
 });
+
 window.addEventListener('load', () => {
     document.querySelector('.chat-input').focus();
 });
