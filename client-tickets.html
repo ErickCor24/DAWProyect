@@ -20,7 +20,8 @@
         font-size: 2rem;
       }
 
-      .search-container {
+      .search-container,
+      .modal-btnContainer {
         display: grid;
         grid-template-columns: auto auto;
         justify-content: end;
@@ -28,7 +29,8 @@
         margin-bottom: 1rem;
       }
 
-      .search-buttons {
+      .search-buttons,
+      .modal-btnContainer {
         display: flex;
         gap: 1rem;
       }
@@ -59,14 +61,16 @@
         margin-left: 0.5rem;
       }
 
-      .search-container button.searchBtn {
+      button.searchBtn {
         background-color: #0066ff;
         color: white;
+        border: none;
       }
 
-      .search-container button.sortBtn,
-      .search-container button.filterBtn {
+      button.sortBtn,
+      button.filterBtn {
         background-color: #e5e7eb;
+        border: none;
       }
 
       table {
@@ -212,8 +216,13 @@
         padding: 20px;
         border-radius: 8px;
         width: 30%;
-
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      }
+
+      #modal-backBtn, #modal-goToChatBtn {
+        padding: 10px;
+        border-radius: 5px;
+        border: none;
       }
 
       .close-btn {
@@ -263,38 +272,10 @@
         .options-td {
           display: none;
         }
-      }
 
-      .modal-btnContainer {
-        display: flex;
-        justify-content: right;
-        margin-top: 30px;
-      }
-
-      .modal-btnContainer button {
-        padding: 10px;
-        border: none;
-        border-radius: 5px;
-        margin-right: 15px;
-      }
-
-      #modal-goToChatBtn {
-        background-color: #0066ff;
-        color: white;
-      }
-
-      #modal-backBtn {
-        background-color: #e5e7eb;
-        color: #000
-      }
-
-      @media (max-width: 480px) {
-        main {
-          padding: 1rem;
-        }
-
-        h1 {
-          font-size: 1.5rem;
+        .modal-content {
+          width: 80%;
+          margin: 10% auto;
         }
       }
     </style>
@@ -368,10 +349,8 @@
                 estimada.
               </p>
               <div class="modal-btnContainer">
-                <button id="modal-backBtn">Volver Atrás</button>
-                <button id="modal-goToChatBtn">
-                  Chat con Soporte
-                </button>
+                <button id="modal-backBtn" class="sortBtn modal-buttons">Volver Atrás</button>
+                <button id="modal-goToChatBtn" class="searchBtn modal-button">Chat con Soporte</button>
               </div>
             </div>
           </div>
