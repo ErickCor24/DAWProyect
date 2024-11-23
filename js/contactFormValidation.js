@@ -1,7 +1,7 @@
 let phone = document.getElementById("phone");
 phone.addEventListener("keypress", (key) => {
     if (isNaN(key.key) || key.key === " " || key.key === "") {
-        alert("Solo números");
+        alert("Solo se permiten números");
         key.preventDefault();
     }
 });
@@ -9,18 +9,20 @@ phone.addEventListener("keypress", (key) => {
 const validateForm = () => {
     deleteAlerts();
     let validate = true;
-    const characters = /^[a-zA-Z\s]+$/;
+    const nameCharacters = /^[a-zA-Z\sÁáÉéÍíÓóÚú]+$/;
+    const emailCharacters = /^[a-zA-Z0-9._-]+@[a-zA-Z.-]+[a-zA-Z]+$/;
+    const phoneCharacters = /^[0-9]+$/;
 
-    //Validación de nombre y apellido
-    const name = document.getElementById("name");
+    //Validación de nombres y apellidos
+    let name = document.getElementById("name");
     if (name.value === "") {
         showAlert("Este campo es requerido. Ingrese sus nombres y apellidos", name);
         validate = false;
     } else if (name.value.length < 10) {
         showAlert("Minimo 10 caracteres", name);
         validate = false;
-    } else if (!characters.test(name.value)) {
-        showAlert("Solo debe contener letras", name);
+    } else if (!nameCharacters.test(name.value)) {
+        showAlert("Solo se permiten letras", name);
         validate = false;
     }
 
@@ -29,13 +31,19 @@ const validateForm = () => {
     if (email.value === "") {
         showAlert("Este campo es requerido. Ingrese su email", email);
         validate = false;
+    } else if(!emailCharacters.test(email.value)){
+        showAlert("Solo se permite letras, números y caracteres especiales como . - _ @", email);
+        validate = false;
     }
 
     //Validación de teléfono
     if (phone.value === "") {
         showAlert("Este campo es requerido. Ingrese su teléfono", phone);
         validate = false;
-    } else if (phone.value.length !== 10) {
+    } else if(!phoneCharacters.test(phone.value)){
+        showAlert("Solo se permite números", phone);
+        validate = false;
+    }else if (phone.value.length !== 10) {
         showAlert("Solo debe contener 10 dígitos", phone);
         validate = false;
     }
