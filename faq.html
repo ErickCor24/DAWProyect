@@ -24,14 +24,37 @@
             grid-template-columns: repeat(3, 1fr);
             gap: 10px;
         }
+        /* Estilo base para los ítems */
         .faq-item {
-            background-color: white;
-            border-radius: 8px;  
-            font-size: 14px;
+            background-color: #f9f9ff; 
+            border: 1px solid #d0d0ff; 
+            border-radius: 8px;
+            padding: 15px;
+            font-size: 16px;
+            color: #333;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+            cursor: pointer; 
+            transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
         }
+
+        .faq-item:hover {
+            background-color: #e0ebff; 
+            transform: translateY(-5px); 
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
+        }
+
+        /* Texto de las preguntas */
         .faq-item h4 {
-            color: #0066FF;
+            color: #0056cc; 
+            margin-bottom: 8px;
+        }
+
+        /* Texto de la descripción */
+        .faq-item p {
+            color: #555; 
             font-size: 14px;
+            display: none; 
         }
         .input-style {
             padding: 10px;
@@ -147,14 +170,17 @@
                     <p>Sí, selecciona el nivel de prioridad al registrar la solicitud.(alta, media o baja)</p>
                 </div>
             </div>
+            <div style="margin-top: 20px;">
+                <button id="btn-evaluacion" class="input-design">Evaluar Servicios</button>
+            </div>
         </section>
     </main>  
-    
     <footer>
         <h3>Derechos reservados &#169;</h3>
         <p>SOFT S MAT 6-1</p>
         <h4>Ciencias Matematicas y Fisicas</h4>
         <p>Grupo 9</p>
     </footer>
+    <script src="js/FaqInteraction.js"></script>
 </body>
 </html>

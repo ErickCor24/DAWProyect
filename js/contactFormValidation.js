@@ -12,7 +12,7 @@ const validateForm = () => {
     const characters = /^[a-zA-Z\s]+$/;
 
     //Validación de nombre y apellido
-    let name = document.getElementById("name");
+    const name = document.getElementById("name");
     if (name.value === "") {
         showAlert("Este campo es requerido. Ingrese sus nombres y apellidos", name);
         validate = false;
