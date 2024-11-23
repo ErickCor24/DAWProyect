@@ -9,15 +9,6 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
     />
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="author" content="Cesar Tipan" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="styles/style.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-    />
     <title>ResolveIT</title>
     <style>
       main {
@@ -28,23 +19,6 @@
       #title {
         font-size: 2rem;
       }
-      main {
-        padding: 2rem;
-        background-color: #ffffff;
-      }
-
-      #title {
-        font-size: 2rem;
-      }
-
-      .search-container,
-      .modal-btnContainer {
-        display: grid;
-        grid-template-columns: auto auto;
-        justify-content: end;
-        gap: 1rem;
-        margin-bottom: 1rem;
-      }
       .search-container,
       .modal-btnContainer {
         display: grid;
@@ -67,26 +41,7 @@
       .search-buttons button {
         padding: 1rem;
       }
-      .search-buttons,
-      .modal-btnContainer {
-        display: flex;
-        gap: 1rem;
-      }
 
-      .search-buttons-text {
-        padding-left: 10px;
-      }
-
-      .search-buttons button {
-        padding: 1rem;
-      }
-
-      .search-container input {
-        border: 1px solid #d1d5db;
-        padding: 0.5rem;
-        border-radius: 0.25rem;
-        width: 250px;
-      }
       .search-container input {
         border: 1px solid #d1d5db;
         padding: 0.5rem;
@@ -100,16 +55,7 @@
         align-items: center;
         border: none;
       }
-      .search-container button {
-        border-radius: 0.25rem;
-        display: flex;
-        align-items: center;
-        border: none;
-      }
 
-      .search-container button p {
-        margin-left: 0.5rem;
-      }
       .search-container button p {
         margin-left: 0.5rem;
       }
@@ -119,17 +65,7 @@
         color: white;
         border: none;
       }
-      button.searchBtn {
-        background-color: #0066ff;
-        color: white;
-        border: none;
-      }
 
-      button.sortBtn,
-      button.filterBtn {
-        background-color: #e5e7eb;
-        border: none;
-      }
       button.sortBtn,
       button.filterBtn {
         background-color: #e5e7eb;
@@ -143,26 +79,7 @@
         overflow: auto;
         font-family: "Roboto", sans-serif;
       }
-      table {
-        width: 100%;
-        background-color: white;
-        border-radius: 0.5rem;
-        overflow: auto;
-        font-family: "Roboto", sans-serif;
-      }
 
-      thead {
-        background-color: #464853;
-        color: white;
-      }
-
-      th {
-        font-size: 1.3rem;
-      }
-
-      td {
-        font-size: 1.1rem;
-      }
       thead {
         background-color: #464853;
         color: white;
@@ -185,24 +102,7 @@
       #options-th {
         text-align: center;
       }
-      th,
-      td {
-        padding: 20px;
-        text-align: left;
-      }
 
-      #options-th {
-        text-align: center;
-      }
-
-      tr {
-        border-bottom: 1px solid #e5e7eb;
-      }
-
-      .ticket-item:hover {
-        cursor: pointer;
-        background-color: #d1d5db;
-      }
       tr {
         border-bottom: 1px solid #e5e7eb;
       }
@@ -216,15 +116,7 @@
         display: flex;
         align-items: center;
       }
-      .ticket-status {
-        display: flex;
-        align-items: center;
-      }
 
-      .ticket-status i {
-        color: #10b981;
-        margin-right: 0.5rem;
-      }
       .ticket-status i {
         color: #10b981;
         margin-right: 0.5rem;
@@ -236,25 +128,11 @@
         align-items: center;
         margin-top: 1rem;
       }
-      .pagination {
-        display: flex;
-        justify-content: flex-end;
-        align-items: center;
-        margin-top: 1rem;
-      }
 
       .pagination .rows-per-page {
         margin-right: 50px;
       }
-      .pagination .rows-per-page {
-        margin-right: 50px;
-      }
 
-      .pagination button {
-        padding: 0.5rem;
-        background-color: #e5e7eb;
-        border-radius: 0.25rem;
-      }
       .pagination button {
         padding: 0.5rem;
         background-color: #e5e7eb;
@@ -267,18 +145,7 @@
         align-items: center;
         gap: 0.5rem;
       }
-      .pagination .navigation {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 0.5rem;
-      }
 
-      .ticket-status {
-        display: flex;
-        align-items: center;
-        margin-bottom: 10px;
-      }
       .ticket-status {
         display: flex;
         align-items: center;
@@ -296,21 +163,7 @@
         font-weight: bold;
         color: white;
       }
-      .ticket-indicator {
-        border-radius: 100px;
-        margin: 0 auto;
-        width: 120px;
-        height: 50px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-weight: bold;
-        color: white;
-      }
 
-      .status-open {
-        background-color: #4caf50;
-      }
       .status-open {
         background-color: #4caf50;
       }
@@ -318,13 +171,7 @@
       .status-canceled {
         background-color: #fa685d;
       }
-      .status-canceled {
-        background-color: #fa685d;
-      }
 
-      .status-resolved {
-        background-color: #2196f3;
-      }
       .status-resolved {
         background-color: #2196f3;
       }
@@ -332,20 +179,11 @@
       .status-closed {
         background-color: #9e9e9e;
       }
-      .status-closed {
-        background-color: #9e9e9e;
-      }
 
       .status-on-hold {
         background-color: #ff9800;
       }
-      .status-on-hold {
-        background-color: #ff9800;
-      }
 
-      .ticket-title {
-        font-weight: bold;
-      }
       .ticket-title {
         font-weight: bold;
       }
@@ -404,30 +242,18 @@
         .modal-content {
           width: 50%;
           margin-top: 100px;
-        }
-        
+        } 
       }
 
       @media (max-width: 768px) {
         .search-container {
           grid-template-columns: 1fr;
         }
-      @media (max-width: 768px) {
-        .search-container {
-          grid-template-columns: 1fr;
-        }
 
         .search-container button {
           width: auto;
         }
-        .search-container button {
-          width: auto;
-        }
 
-        .pagination {
-          flex-direction: column;
-          align-items: flex-start;
-        }
         .pagination {
           flex-direction: column;
           align-items: flex-start;
@@ -444,31 +270,7 @@
         #options-th {
           display: none;
         }
-        .pagination .rows-per-page {
-          margin-right: 0;
-        }
 
-        #clients-th,
-        #creation-date-th,
-        #update-date-th,
-        #type-th,
-        #options-th {
-          display: none;
-        }
-
-        .clients-td,
-        .creation-dates-td,
-        .update-dates-td,
-        .types-td,
-        .options-td {
-          display: none;
-        }
-
-        .modal-content {
-          width: 80%;
-          margin: 10% auto;
-        }
-      }
         .clients-td,
         .creation-dates-td,
         .update-dates-td,
@@ -485,29 +287,7 @@
     </style>
   </head>
   <body>
-  </head>
-  <body>
     <header>
-      <a href="home.html" class="logo-div" style="color: #000">
-        <img
-          class="logo-img"
-          src="src/logo.png"
-          alt="Logo empresa"
-          width="50"
-          height="50"
-        />
-        <h1 id="logo-name">ResolveIT</h1>
-      </a>
-      <nav class="nav-links">
-        <a href="returns.html">Devoluciones</a>
-        <a href="client-tickets.html">Historial</a>
-        <a href="faq.html">FAQ</a>
-        <a href="contact.html">Contactenos</a>
-      </nav>
-      <div id="header-right">
-        <button class="login-button nav-button">Login</button>
-        <button class="register-button nav-button">Register</button>
-      </div>
       <a href="home.html" class="logo-div" style="color: #000">
         <img
           class="logo-img"
@@ -582,57 +362,6 @@
           </div>
         </div>
       </section>
-      <section class="search-header">
-        <h1 id="title">Historial de Tickets</h1>
-        <div class="search-container">
-          <input placeholder="Buscar..." type="text" />
-          <div id="search-icons-container" class="search-buttons">
-            <button class="searchBtn">
-              <i class="fas fa-search"></i
-              ><span class="search-buttons-text">Buscar</span>
-            </button>
-            <button class="filterBtn">
-              <i class="fas fa-filter"></i
-              ><span class="search-buttons-text">Filtrar</span>
-            </button>
-            <button class="sortBtn">
-              <i class="fas fa-sort"></i
-              ><span class="search-buttons-text">Ordenar</span>
-            </button>
-          </div>
-        </div>
-      </section>
-
-      <section>
-        <div id="ticket-modal" class="modal">
-          <div class="modal-content">
-            <div class="modal-title">
-              <span class="close-btn">&times;</span>
-              <h2>
-                Detalles del Ticket: #
-                <span id="ticket-id">1</span>
-              </h2>
-            </div>
-            <div class="modal-description">
-              <p><strong>Título:</strong> Problema con el envío</p>
-              <p><strong>Estado:</strong> Abierto</p>
-              <p><strong>Fecha de Creación:</strong> 31/10/2024</p>
-              <p><strong>Fecha de Actualización:</strong> 02/11/2024</p>
-              <p><strong>Tipo:</strong> Soporte Técnico</p>
-              <p><strong>Código del Producto:</strong> 123456</p>
-              <p>
-                <strong>Detalle:</strong> El cliente reporta un problema con el
-                envío del producto, indicando que no ha llegado en la fecha
-                estimada.
-              </p>
-              <div class="modal-btnContainer">
-                <button id="modal-backBtn" class="sortBtn modal-buttons">Volver Atrás</button>
-                <button id="modal-goToChatBtn" class="searchBtn modal-button">Chat con Soporte</button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
 
       <section class="ticket-list">
         <table class="ticket-table">
@@ -758,143 +487,7 @@
           </tbody>
         </table>
       </section>
-      <section class="ticket-list">
-        <table class="ticket-table">
-          <thead>
-            <tr class="ticket-titles">
-              <th id="state-th">Estado</th>
-              <th id="details-th">Detalles</th>
-              <th id="creation-date-th">Fecha de Creación</th>
-              <th id="update-date-th">Última Actualización</th>
-              <th id="type-th">Tipo</th>
-              <th id="options-th">...</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr class="ticket-item">
-              <td class="status-td">
-                <div class="ticket-indicator status-open">Abierto</div>
-              </td>
-              <td class="details">
-                <div class="ticket-status">
-                  <div style="margin-left: 10px">
-                    <div class="ticket-title">Problema con el envío</div>
-                    <div class="ticket-date">Última actualización: Ayer</div>
-                  </div>
-                </div>
-              </td>
-              <td class="creation-dates-td">31/10/2024</td>
-              <td class="update-dates-td">02/11/2024</td>
-              <td class="types-td">Soporte Técnico</td>
-              <td class="options-td"><i class="fa-regular fa-message"></i></td>
-            </tr>
-            <tr class="ticket-item">
-              <td class="status-td">
-                <div class="ticket-indicator status-canceled">Cancelado</div>
-              </td>
-              <td class="details">
-                <div class="ticket-status">
-                  <div style="margin-left: 10px">
-                    <div class="ticket-title">Solicitud de reembolso</div>
-                    <div class="ticket-date">Última actualización: Hoy</div>
-                  </div>
-                </div>
-              </td>
-              <td class="creation-dates-td">30/10/2024</td>
-              <td class="update-dates-td">04/11/2024</td>
-              <td class="types-td">Reembolso</td>
-              <td class="options-td"><i class="fa-regular fa-message"></i></td>
-            </tr>
-            <tr class="ticket-item">
-              <td class="status-td">
-                <div class="ticket-indicator status-resolved">Resuelto</div>
-              </td>
-              <td class="details">
-                <div class="ticket-status">
-                  <div style="margin-left: 10px">
-                    <div class="ticket-title">Consulta sobre producto</div>
-                    <div class="ticket-date">
-                      Última actualización: 02/11/2024
-                    </div>
-                  </div>
-                </div>
-              </td>
-              <td class="creation-dates-td">28/10/2024</td>
-              <td class="update-dates-td">02/11/2024</td>
-              <td class="types-td">Consulta</td>
-              <td class="options-td"><i class="fa-regular fa-message"></i></td>
-            </tr>
-            <tr class="ticket-item">
-              <td class="status-td">
-                <div class="ticket-indicator status-closed">Cerrado</div>
-              </td>
-              <td class="details">
-                <div class="ticket-status">
-                  <div style="margin-left: 10px">
-                    <div class="ticket-title">Devolución de producto</div>
-                    <div class="ticket-date">
-                      Última actualización: 01/11/2024
-                    </div>
-                  </div>
-                </div>
-              </td>
-              <td class="creation-dates-td">25/10/2024</td>
-              <td class="update-dates-td">01/11/2024</td>
-              <td class="types-td">Devolución</td>
-              <td class="options-td"><i class="fa-regular fa-message"></i></td>
-            </tr>
-            <tr class="ticket-item">
-              <td class="status-td">
-                <div class="ticket-indicator status-on-hold">En Espera</div>
-              </td>
-              <td class="details">
-                <div class="ticket-status">
-                  <div style="margin-left: 10px">
-                    <div class="ticket-title">Problema con la garantía</div>
-                    <div class="ticket-date">
-                      Última actualización: 02/11/2024
-                    </div>
-                  </div>
-                </div>
-              </td>
-              <td class="creation-dates-td">29/10/2024</td>
-              <td class="update-dates-td">02/11/2024</td>
-              <td class="types-td">Soporte Técnico</td>
-              <td class="options-td"><i class="fa-regular fa-message"></i></td>
-            </tr>
-            <tr class="ticket-item">
-              <td class="status-td">
-                <div class="ticket-indicator status-open">Abierto</div>
-              </td>
-              <td class="details">
-                <div class="ticket-status">
-                  <div style="margin-left: 10px">
-                    <div class="ticket-title">Fallo en el dispositivo</div>
-                    <div class="ticket-date">Última actualización: Hoy</div>
-                  </div>
-                </div>
-              </td>
-              <td class="creation-dates-td">03/11/2024</td>
-              <td class="update-dates-td">04/11/2024</td>
-              <td class="types-td">Soporte Técnico</td>
-              <td class="options-td"><i class="fa-regular fa-message"></i></td>
-            </tr>
-          </tbody>
-        </table>
-      </section>
 
-      <section class="pagination">
-        <div class="navigation">
-          <div class="rows-per-page">
-            Tickets por página: <span id="tickets-per-page"> 8 </span>
-          </div>
-          <div id="pagination-info">1-8 de 400</div>
-          <div class="navigation-arrows">
-            <button id="back-arrow">&lt;</button>
-            <button id="next-arrow">&gt;</button>
-          </div>
-        </div>
-      </section>
       <section class="pagination">
         <div class="navigation">
           <div class="rows-per-page">
@@ -914,14 +507,7 @@
       <p>SOFT S MAT 6-1</p>
       <h4>Ciencias Matematicas y Fisicas</h4>
       <p>Grupo 9</p>
-      <h3>Derechos reservados &#169;</h3>
-      <p>SOFT S MAT 6-1</p>
-      <h4>Ciencias Matematicas y Fisicas</h4>
-      <p>Grupo 9</p>
     </footer>
     <script src="./js/tickets-history-clients.js"></script>
   </body>
-    <script src="./js/tickets-history-clients.js"></script>
-  </body>
 </html>
-
