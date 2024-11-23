@@ -6,6 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles/style.css" />
     <title>ResolveIT</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
     <style>
       html {
         overflow: hidden;
@@ -48,7 +52,7 @@
         flex: 1;
         padding: 20px;
         overflow-y: auto;
-        max-height: 650px; 
+        max-height: 650px;
         border-bottom: 1px solid #e5e7eb;
         background-color: #ffffff;
       }
@@ -111,6 +115,38 @@
       .evidence-images:hover {
         cursor: pointer;
       }
+
+      #upload-file-btn {
+        background-color: #0066ff;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        padding: 10px;
+        cursor: pointer;
+      }
+
+      @media (max-width: 768px) {
+        html {
+          overflow: auto;
+        }
+
+        .chat-section {
+          flex-direction: column;
+        }
+
+        .chat-sidebar {
+          width: auto;
+        }
+
+        .chat-content {
+          margin-top: 20px;
+          width: 100%;
+        }
+
+        .chat-history {
+          max-height: 300px;
+        }
+      }
     </style>
   </head>
 
@@ -154,14 +190,14 @@
           <div class="client-evidence">
             <h3>Evidencia del Cliente</h3>
             <div class="evidence-images">
-                <img
-                  src="./src/evidence.png"
-                  alt="Evidencia del cliente"
-                  width="50%"
-                  height="auto"
-                />
-              </div>
+              <img
+                src="./src/evidence.png"
+                alt="Evidencia del cliente"
+                width="50%"
+                height="auto"
+              />
             </div>
+          </div>
         </div>
 
         <div class="chat-content">
@@ -177,6 +213,9 @@
             </div>
           </div>
           <form class="chat-input-container">
+            <button id="upload-file-btn">
+              <i class="fa-solid fa-file-arrow-up"></i>            
+            </button>
             <input
               type="text"
               placeholder="Escribe tu mensaje..."
