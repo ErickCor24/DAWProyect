@@ -59,11 +59,13 @@
         .button-continue:hover {
             transition: 50ms ease-in;
             background-color: #005CE6;
+            cursor: pointer;
         }
 
         .button-contact:hover {
             transition: 2s ease-in;
             border: #005CE6 2px solid;
+            cursor: pointer;
         }
 
         @media screen and (max-width: 1020px) {
@@ -96,21 +98,22 @@
 
 <body>
     <header>
-        <a href="home.html" class="logo-div" style="color: #000;">
-            <img class="logo-img" src="src/logo.png" alt="Logo empresa" width="50" height="50">
-            <h1 id="logo-name">ResolveIT</h1>
-        </a>
+        <a href="/" class="logo-div" style="color: #000;">
+          <img class="logo-img" src="src/logo.png" alt="Logo empresa" width="50" height="50">
+          <h1 id="logo-name">ResolveIT</h1>
+      </a>
         <nav class="nav-links">
-            <a href="returns.html">Devoluciones</a>
-            <a href="client-tickets.html">Historial</a>
-            <a href="faq.html">FAQ</a>
-            <a href="contact.html">Contactenos</a>
+          <a href="returns.html">Devoluciones</a>
+          <a href="client-tickets.html">Historial</a>
+          <a href="faq.html">FAQ</a>
+          <a href="contact.html">Contactenos</a>
         </nav>
         <div id="header-right">
-            <button class="login-button nav-button">Login</button>
-            <button class="register-button nav-button">Register</button>
+          <button class="login-button nav-button" onclick="goToLogin()">Login</button>
+          <button class="register-button nav-button" onclick="goToRegister()">Register</button>
+          <script src="./js/index.js"></script>
         </div>
-    </header>
+      </header>
 
     <main class="main-container" >
         <img id="img-customer" style=" object-fit: cover; margin: 0" src="src/customer-service.png"
@@ -127,7 +130,7 @@
                 <li>El motivo de la devolución debe estar dentro de las políticas de devolución de la empresa</li>
             </ol>
         </div>
-        <button class="button-main button-contact">Contactar con un asesor</button>
+        <button class="button-main button-contact" onclick="location.href='contact-form.html'">Contactar con un asesor</button>
         <button class="button-main button-continue" onclick="location.href='return-request.html'">Continuar</button>
     </main>
 
@@ -139,5 +142,4 @@
     </footer>
     <script src="js/Return.js"></script>
 </body>
-
 </html>

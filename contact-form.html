@@ -157,21 +157,22 @@
 
 <body>
     <header>
-        <a href="home.html" class="logo-div" style="color: #000;">
-            <img class="logo-img" src="src/logo.png" alt="Logo empresa" width="50" height="50">
-            <h1 id="logo-name">ResolveIT</h1>
-        </a>
+        <a href="/" class="logo-div" style="color: #000;">
+          <img class="logo-img" src="src/logo.png" alt="Logo empresa" width="50" height="50">
+          <h1 id="logo-name">ResolveIT</h1>
+      </a>
         <nav class="nav-links">
-            <a href="returns.html">Devoluciones</a>
-            <a href="client-tickets.html">Historial</a>
-            <a href="faq.html">FAQ</a>
-            <a href="contact.html">Contactenos</a>
+          <a href="returns.html">Devoluciones</a>
+          <a href="client-tickets.html">Historial</a>
+          <a href="faq.html">FAQ</a>
+          <a href="contact.html">Contactenos</a>
         </nav>
         <div id="header-right">
-            <button class="login-button nav-button">Login</button>
-            <button class="register-button nav-button">Register</button>
+          <button class="login-button nav-button" onclick="goToLogin()">Login</button>
+          <button class="register-button nav-button" onclick="goToRegister()">Register</button>
+          <script src="./js/index.js"></script>
         </div>
-    </header>
+      </header>
 
     <main>
         <div class="div-form">
@@ -189,7 +190,7 @@
                         <div class="div-field-horizontal">
                             <label>Email:</label>
                         </div>
-                        <input type="email" id="email" name="email" class="input-design" placeholder="Ingrese su email">
+                        <input type="text" id="email" name="email" class="input-design" placeholder="Ingrese su email">
                     </div>
                 </div>
                 <div class="div-group-fields">

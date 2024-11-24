@@ -50,6 +50,7 @@
             width: fit-content;
             font-size: 0.8rem;
             margin-left: 20%;
+            cursor: pointer;
         }
 
         .contact-button:hover {
@@ -74,6 +75,7 @@
             padding: 20px;
             height: 100%;
             max-width: 300px;
+            cursor: pointer;
         }
 
         .contact-options a {
@@ -172,21 +174,22 @@
 
 <body>
     <header>
-        <a href="home.html" class="logo-div" style="color: #000;">
-            <img class="logo-img" src="src/logo.png" alt="Logo empresa" width="50" height="50">
-            <h1 id="logo-name">ResolveIT</h1>
-        </a>
+        <a href="/" class="logo-div" style="color: #000;">
+          <img class="logo-img" src="src/logo.png" alt="Logo empresa" width="50" height="50">
+          <h1 id="logo-name">ResolveIT</h1>
+      </a>
         <nav class="nav-links">
-            <a href="returns.html">Devoluciones</a>
-            <a href="client-tickets.html">Historial</a>
-            <a href="faq.html">FAQ</a>
-            <a href="contact.html">Contactenos</a>
+          <a href="returns.html">Devoluciones</a>
+          <a href="client-tickets.html">Historial</a>
+          <a href="faq.html">FAQ</a>
+          <a href="contact.html">Contactenos</a>
         </nav>
         <div id="header-right">
-            <button class="login-button nav-button">Login</button>
-            <button class="register-button nav-button">Register</button>
+          <button class="login-button nav-button" onclick="goToLogin()">Login</button>
+          <button class="register-button nav-button" onclick="goToRegister()">Register</button>
+          <script src="./js/index.js"></script>
         </div>
-    </header>
+      </header>
 
     <main>
         <div class="contact-asesor">
@@ -205,21 +208,21 @@
             <p class="type-contact">Comunidad</p>
             <p style="margin-left: 0px;" class="content-contact">Envía un mensaje en nuestra comunidad, intercambia problemas y posibles
                 soluciones</p>
-            <a href="">Ver comunidad</a>
+            <a href="#">Ver comunidad</a>
         </div>
         <div class="contact-options" id="llamada">
             <img src="https://cdn-icons-png.flaticon.com/128/126/126509.png" alt="llamada" class="icon"
                 style="margin-left: 0px;">
             <p class="type-contact">Llamadas</p>
             <p style="margin-left: 0px;">Consulta nuestros horarios de atención y llama a nuestra linea telefónica +1800 985 765</p>
-            <a href="">Ver horarios de atención</a>
+            <a href="#">Ver horarios de atención</a>
         </div>
         <div class="contact-options" id="correo">
             <img src="https://cdn-icons-png.flaticon.com/128/4597/4597536.png" alt="correo" class="icon"
                 style="margin-left: 0px;">
             <p class="type-contact">Correo</p>
             <p style="margin-left: 0px;">Envíanos un correo y te responderemos a la mayor brevedad posible, sin importar el horario.</p>
-            <a href="">Ver correos</a>
+            <a href="#">Ver correos</a>
         </div>
     </main>
 

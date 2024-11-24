@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Jimmy Josue Páez Velasco">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/style.css">
+    <title>Evaluación de Servicios</title>
+    <style>
+        /* Main y secciones */
+        main {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 80vh;
+            background-color: #f4f4f4;
+        }
+
+        .div-form {
+            background: white;
+            padding: 20px;
+            margin: 20px 0 20px 0;    
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 500px;
+            width: 100%;
+        }
+
+
+        .div-field-vertical {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 15px;
+        }
+            #comments {
+                width: 100%;
+                resize: none; /* Evita que se redimensione el textarea */
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                padding: 10px;
+                font-size: 1rem;
+                box-sizing: border-box; /* Hace que el padding no afecte el tamaño total */
+            }
+
+            #rating {
+                width: 100%;
+                margin-bottom: 10px;
+            }
+
+        .radio-buttons {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .div-btn {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .alert {
+            color: #ee2200;
+            font-size: 0.7rem;
+            margin: 0;
+            margin-top: 3px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <a href="/" class="logo-div" style="color: #000;">
+          <img class="logo-img" src="src/logo.png" alt="Logo empresa" width="50" height="50">
+          <h1 id="logo-name">ResolveIT</h1>
+      </a>
+        <nav class="nav-links">
+          <a href="returns.html">Devoluciones</a>
+          <a href="client-tickets.html">Historial</a>
+          <a href="faq.html">FAQ</a>
+          <a href="contact.html">Contactenos</a>
+        </nav>
+        <div id="header-right">
+          <button class="login-button nav-button" onclick="goToLogin()">Login</button>
+          <button class="register-button nav-button" onclick="goToRegister()">Register</button>
+          <script src="./js/index.js"></script>
+        </div>
+      </header>
+    <main>
+        <div class="div-form">
+            <form id="evaluation-form">
+                <h3>Evaluación de Servicios</h3>
+
+                <!-- Nombre-->
+                <div class="div-field-vertical">
+                    <label for="name">Nombre completo:</label>
+                    <input type="text" id="name" class="input-design" placeholder="Ingresa tu nombre completo">
+                    <p class="alert" id="alert-name"></p>
+                </div>
+                <!-- Email-->
+                <div class="div-field-vertical">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" class="input-design" placeholder="Ingresa tu correo electrónico">
+                    <p class="alert" id="alert-email"></p>
+                </div>
+                <!--Company-->
+                <div class="div-field-vertical">
+                    <label for="company">Empresa:</label>
+                    <input type="text" id="company" class="input-design" placeholder="Ingresa el nombre de tu empresa">
+                    <p class="alert" id="alert-company"></p>
+                </div>
+
+                <!-- Calificación -->
+                <div class="div-field-vertical">
+                    <label>Calificación:</label>
+                    <select id="rating" class="input-design">
+                        <option value="">Selecciona una opción</option>
+                        <option value="1">1 - Muy malo</option>
+                        <option value="2">2 - Malo</option>
+                        <option value="3">3 - Regular</option>
+                        <option value="4">4 - Bueno</option>
+                        <option value="5">5 - Excelente</option>
+                    </select>
+                    <p class="alert" id="alert-rating"></p>
+                </div>
+
+                <!-- Comentarios -->
+                <div class="div-field-vertical">
+                    <label for="comments">Comentarios:</label>
+                    <textarea id="comments" class="input-design" rows="5" placeholder="Escribe tus comentarios"></textarea>
+                    <p class="alert" id="alert-comments"></p>
+                </div>
+
+                <!-- Preferencias -->
+                <div class="div-field-vertical">
+                    <p>¿Recomendarías este servicio?</p>
+                    <div class="radio-buttons">
+                        <input type="radio" id="recommend-yes" name="recommend" value="Sí">
+                        <label for="recommend-yes">Sí</label>
+                        <input type="radio" id="recommend-no" name="recommend" value="No">
+                        <label for="recommend-no">No</label>
+                    </div>
+                    <p class="alert" id="alert-recommend"></p>
+                </div>
+
+                <div class="div-btn">
+                    <button type="button" class="input-submit-forms" onclick="window.history.back();">Volver atrás</button>
+                    <button type="submit" class="input-submit-forms">Enviar</button>
+                </div>
+            </form>
+        </div>
+    </main>
+    <footer>
+        <h3>Derechos reservados &#169;</h3>
+        <p>SOFT S MAT 6-1</p>
+        <h4>Ciencias Matematicas y Fisicas</h4>
+        <p>Grupo 9</p>
+    </footer>
+    <script src="js/evaluationForm.js"></script>
+</body>
+</html>
+
