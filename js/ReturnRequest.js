@@ -46,14 +46,14 @@ frmReturnRequest.btn_form.addEventListener("click", (e) => {
 });
 
 function validateOnlyLetters(flag) {
+  const letterRegex = /^[-a-zA-Z\s]+$/; //only letters
   if (letterRegex.test(flag)) {
-    const letterRegex = /^[-a-zA-Z\s]+$/; //only letters
     return true;
   } else return false;
 }
 
 function validateOnlyEmail(flag) {
-  const numberRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; //only letters
+  const numberRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; 
   if (numberRegex.test(flag)) {
     return true;
   } else return false;
